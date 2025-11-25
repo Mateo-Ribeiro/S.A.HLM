@@ -1,11 +1,44 @@
 :root {
-	--green: #41a62a;
-	--orange: #e75113;
-	--brown: #542c08;
-	--purple: #622181;
-	--sand: #957755;
-	--gray: #5f6062;
-	--blue: #009e8f;
-	--white: #ffffff;
-	--black: #000000;
+  --green: #41a62a;
+  --orange: #e75113;
+  --brown: #542c08;
+  --purple: #622181;
+  --sand: #957755;
+  --gray: #5f6062;
+  --blue: #009e8f;
+  --white: #ffffff;
+  --black: #000000;
 }
+
+/*Début loader*/
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(0deg, var(--white) 50%, var(--green) 100%);
+  animation: spin 1s linear infinite;
+}
+
+.inner-circle {
+  width: 90%;
+  height: 90%;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*Fin loader*/
