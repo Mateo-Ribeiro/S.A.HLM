@@ -1,0 +1,48 @@
+body {
+	display: flex;
+	justify-content: center;
+	margin: unset;
+}
+
+body>div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 20vw;
+	height: 100vh;
+}
+
+body>div>img {
+	height: 35vh;
+	aspect-ratio: initial;
+}
+
+body>div>form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body>div>form>label {
+	align-self: flex-start;
+}
+
+body>div>form>input {
+	height: 4vh;
+	width: 20vw;
+	margin-bottom: 5vh;
+	border-radius: 15px;
+	border: 2px solid var(--green);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+}
+
+body>div>form>button {
+	margin-top: 11vh;
+	height: 4vh;
+	width: 12vw;
+	color: var(--white);
+	background-color: var(--green);
+	border-radius: 15px;
+	font-size: 16px;
+}
