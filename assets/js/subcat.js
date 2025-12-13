@@ -1,10 +1,12 @@
+// assets/js/subcat.js (La logique de stockage est confirmée et conservée)
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- VARIABLES GLOBALES ET DOM ---
     const pageTitleElement = document.getElementById('pageTitle');
     const pageHeadingElement = document.getElementById('pageHeading');
     const categoryNameElement = pageHeadingElement.querySelector('.category-name'); 
-    const backLinkElement = pageHeadingElement.querySelector('.back-link'); // NOUVEAU: Cible le lien de retour
+    const backLinkElement = pageHeadingElement.querySelector('.back-link'); 
     const container = document.getElementById('dynamicContainer'); 
     const modal = document.getElementById('contentModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -17,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- MAPPING COMPLET DES ICÔNES PAR CLASSIFICATION ---
     const classificationIconMap = {
-        // ... (votre mapping reste ici) ...
-        // ===== CATÉGORIE 1 - Atteintes à la tranquillité des espaces collectifs =====
         '1.1': 'assets/img/Poubelle.svg', 	
         '1.2': 'assets/img/Caca.svg', 		
         '1.3': 'assets/img/Voiture.svg', 	
@@ -26,26 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
         '1.3.2': 'assets/img/Voiture.svg',	
         '1.3.3': 'assets/img/Voiture.svg',	
         '1.4': 'assets/img/Outil.svg', 		
-        
-        // ===== CATÉGORIE 2 - Atteintes à la tranquillité des espaces privatifs =====
         '2.1': 'assets/img/nuisances_sonores.svg', 		
         '2.2': 'assets/img/nuisances_animaux.svg', 		
-        
-        // ===== CATÉGORIE 3 - Atteintes dû à des détournements d'usage =====
         '3.1': 'assets/img/squat_de_logements.svg', 		
         '3.2': 'assets/img/depot_darmes.svg', 		
         '3.3': 'assets/img/occupation_abusive_des_parties_communes.svg', 		
         '3.3.1': 'assets/img/violences_urbaines.svg', 	
         '3.3.2': 'assets/img/Poubelle.svg', 	
+        '3.3.3': 'assets/img/Voiture.svg', 	
         '3.4': 'assets/img/violences_urbaines.svg', 		
         '3.5': 'assets/img/troubles_mentaux.svg', 		
-        
-        // ===== CATÉGORIE 4 - Atteintes aux biens =====
         '4.1': 'assets/img/aerosol.svg', 		
         '4.2': 'assets/img/degradations.svg', 		
         '4.3': 'assets/img/incendies_sinistres.svg', 		
-        
-        // ===== CATÉGORIE 5 - À l'attention des salariés =====
         '5.1': 'assets/img/cas_agression.svg', 		
         '5.1.1': 'assets/img/Outil.svg', 	
         '5.1.2': 'assets/img/Outil.svg', 	
@@ -79,16 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function getBackUrl(currentClassification) {
         const parts = currentClassification.split('.');
         
-        // Si on est dans une catégorie de niveau 1 (ex: '1'), le retour est l'accueil
         if (parts.length === 1) {
             return 'home.html';
         }
         
-        // Sinon, le retour est la page de la classification parente
-        const parentClassification = parts.slice(0, parts.length - 1).join('.');
-
-        // Pour revenir à la page précédente de sous-catégorie, on met à jour le localStorage
-        // pour que subcategories.html affiche le contenu de la classification parente
         return 'subcategories.html';
     }
 
@@ -183,21 +170,19 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryNameElement.textContent = parentItem.text;
         }
 
-        // c. Mise à jour du lien de retour (CORRECTION CLÉ)
+        // c. Mise à jour du lien de retour 
         const backUrl = getBackUrl(currentClassification);
         
         if (backUrl === 'home.html') {
-            // Si c'est le niveau 1, on revient à home.html
             backLinkElement.setAttribute('href', backUrl);
             backLinkElement.removeAttribute('onclick');
         } else {
-            // Si c'est un niveau > 1, on revient à subcategories.html en chargeant le parent
             const parts = currentClassification.split('.');
             const parentClassification = parts.slice(0, parts.length - 1).join('.');
             
             backLinkElement.setAttribute('href', backUrl);
             backLinkElement.onclick = function() {
-                localStorage.setItem('parentId', parentClassification); // Définir la catégorie parente avant de naviguer
+                localStorage.setItem('parentId', parentClassification); 
                 window.location.href = backUrl;
                 return false;
             };
@@ -230,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
 
                 itemElement.addEventListener('click', function() {
-                    // Clic sur un dossier : naviguer vers la sous-catégorie
                     localStorage.setItem('parentId', item.classification);
                     window.location.href = "subcategories.html";
                 });
@@ -274,8 +258,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>Solution :</h2>
                 <p>${contentData.solution || 'N/A'}</p>
             `;
+            
+            // Stocker le texte, la courte description ET la classification ID
+            localStorage.setItem('finalCategoryText', title); 
+            localStorage.setItem('finalDescription', contentData.description || ''); 
+            localStorage.setItem('finalClassificationId', classification); 
         } else {
             modalContent.innerHTML = `<p>Aucun contenu détaillé trouvé pour cette classification (${classification}).</p>`;
+            // Nettoyage en cas d'absence de contenu
+            localStorage.removeItem('finalCategoryText');
+            localStorage.removeItem('finalDescription');
+            localStorage.removeItem('finalClassificationId'); 
         }
 
         localStorage.setItem('lastContentClassification', classification);
@@ -303,8 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (declareIncidentBtn) {
         declareIncidentBtn.addEventListener('click', () => {
-            const finalCategoryText = modalTitle.textContent; 
-            localStorage.setItem('finalCategoryText', finalCategoryText);
             window.location.href = "form.html"; 
         });
     }

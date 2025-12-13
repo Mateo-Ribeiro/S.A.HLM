@@ -9,16 +9,15 @@ const mainForm = document.getElementById('mainForm');
 const modal = document.getElementById('confirmationModal');
 const confirmSendBtn = document.getElementById('confirmSendBtn');
 const cancelSendBtn = document.getElementById('cancelSendBtn');
+const descriptionInput = document.getElementById('description');
 
 /**
  * Échappe les guillemets simples pour l'insertion dans un attribut HTML onclick.
- * Cela empêche les apostrophes (ex: l'Oise) dans les noms de catégories de casser l'appel de fonction JavaScript.
  * @param {string} text - Le texte à échapper.
  * @returns {string} Le texte échappé.
  */
 function escapeForHtmlAttribute(text) {
     if (typeof text !== 'string') return text;
-    // Remplace les guillemets simples par une version échappée pour la chaîne JS
     return text.replace(/'/g, "\\'");
 }
 
@@ -30,7 +29,6 @@ function escapeForHtmlAttribute(text) {
 function getLastCategory(fullText) {
     if (!fullText) return '';
     const parts = fullText.split('>');
-    // Retourne la dernière partie, retire les espaces et enlève les échappements de guillemets simples
     return parts[parts.length - 1].trim().replace(/\\'/g, "'");
 }
 
@@ -40,28 +38,23 @@ function getLastCategory(fullText) {
 async function loadDataAndInitialize() {
     let rawData;
     
-    // --- Chargement des données (Gestion de l'erreur de chemin d'accès) ---
+    // --- Chargement des données ---
     try {
-        // Le chemin 'assets/js/data.json' est relatif à la page HTML
         const response = await fetch('assets/js/data.json'); 
-        
         if (!response.ok) {
-            // Lance une erreur si le statut HTTP n'est pas 200 (ex: 404 Not Found)
             throw new Error(`Erreur HTTP! Statut: ${response.status}. Vérifiez le chemin 'data.json'.`);
         }
         rawData = await response.json();
-        
     } catch (error) {
         console.error("Erreur critique lors du chargement de data.json :", error);
         alert("Impossible de charger les données de catégorie. Veuillez vérifier le chemin du fichier 'data.json' et la console.");
-        // Fournit des données vides pour éviter un crash total
         rawData = { category: [], subcategory: [], subsubcategory: [] }; 
     }
 
     // --- 1. Construction de la structure hiérarchique ---
     function buildHierarchy(data) {
         const categories = {};
-
+        
         data.category.forEach(cat => {
             categories[cat.classification] = { text: cat.text, subcategories: {} };
         });
@@ -93,6 +86,32 @@ async function loadDataAndInitialize() {
 
     const classifiedData = buildHierarchy(rawData);
 
+    // --- PRÉ-REMPLISSAGE ET VALIDATION ---
+    if (descriptionInput) {
+        const prefilledNature = localStorage.getItem('finalCategoryText');
+        const prefilledDescription = localStorage.getItem('finalDescription');
+        const prefilledId = localStorage.getItem('finalClassificationId'); 
+
+        if (prefilledNature) {
+            searchInput.value = prefilledNature; 
+            clearBtn.classList.add('show'); 
+            
+            // Remplir le champ caché (pour passer la validation)
+            categoryValue.value = prefilledId || prefilledNature; 
+            
+            // Nettoyer les valeurs
+            localStorage.removeItem('finalCategoryText');
+            localStorage.removeItem('finalClassificationId');
+        }
+
+        if (prefilledDescription) {
+            descriptionInput.value = prefilledDescription;
+            localStorage.removeItem('finalDescription');
+        }
+    }
+    // --- FIN DU PRÉ-REMPLISSAGE ---
+
+
     // --- 2. Fonctions de gestion du menu déroulant et de recherche ---
 
     function highlightText(text, query) {
@@ -115,7 +134,8 @@ async function loadDataAndInitialize() {
                 fullText = `${classifiedData[id.split('.')[0]].text} > ${itemText}`;
             } else if (level === 3) {
                 const parts = id.split('.');
-                fullText = `${classifiedData[parts[0]].text} > ${classifiedData[parts[0]].subcategories[parts[0] + '.' + parts[1]].text} > ${itemText}`;
+                const parentLevel2Text = classifiedData[parts[0]].subcategories[parts[0] + '.' + parts[1]].text;
+                fullText = `${classifiedData[parts[0]].text} > ${parentLevel2Text} > ${itemText}`;
             }
 
             const itemMatches = itemText.toLowerCase().includes(lowerQuery);
@@ -123,7 +143,6 @@ async function loadDataAndInitialize() {
             let subItemsKey;
             let hasChildren = false;
 
-            // Détermine si l'élément a des enfants et si oui, quelle clé utiliser
             if (item.subcategories && Object.keys(item.subcategories).length > 0) {
                 subItemsKey = 'subcategories';
                 hasChildren = true;
@@ -145,9 +164,8 @@ async function loadDataAndInitialize() {
                 localHasMatches = true;
                 const highlightedText = highlightText(itemText, query);
 
-                // **CORRECTION ICI : Un élément est sélectionnable s'il est de niveau 3 OU s'il n'a AUCUN enfant (feuille).**
-                if (level === 3 || !hasChildren) { 
-                    // Item sélectionnable (Niveau 3 ou Niveau 2 sans enfant)
+                if (!hasChildren) { 
+                    // Item sélectionnable (Feuille de n'importe quel niveau)
                     const escapedFullText = escapeForHtmlAttribute(fullText);
                     levelHtml += `
                         <div class="subcategory-item" data-id="${id}" onclick="window.selectCategory('${id}', '${escapedFullText}')">
@@ -155,8 +173,8 @@ async function loadDataAndInitialize() {
                         </div>
                     `;
                 } else {
-                    // Conteneur (Niveau 1 ou Niveau 2 avec enfants)
-                    const isGroupItem = level === 2;
+                    // Conteneur (A des enfants et doit être un groupe collapsible)
+                    const isGroupItem = level === 2; 
                     levelHtml += `
                         <div class="category-item ${isGroupItem ? 'sub-group' : ''}" data-id="${id}">
                             <div class="category-header" onclick="window.toggleSubcategories('${id}')">
@@ -174,8 +192,25 @@ async function loadDataAndInitialize() {
         return { html: levelHtml, localHasMatches };
     }
 
+    // Fonction de recherche dans les catégories
+    function searchCategories(query) {
+        if (!query.trim()) {
+            // Si pas de recherche, afficher le menu normal
+            createDropdown();
+            return;
+        }
 
-    // Crée le menu déroulant complet (mode normal)
+        // Utiliser renderLevel pour filtrer et afficher les résultats
+        const result = renderLevel(classifiedData, 1, query, classifiedData);
+        
+        if (result.localHasMatches) {
+            dropdownMenu.innerHTML = result.html;
+        } else {
+            dropdownMenu.innerHTML = '<div class="no-results">Aucun résultat trouvé</div>';
+        }
+    }
+
+    // Crée le menu déroulant complet (mode normal, sans recherche)
     function createDropdown() {
         let html = '';
         const data = classifiedData;
@@ -205,7 +240,7 @@ async function loadDataAndInitialize() {
                 }
 
                 if (Object.keys(subsubcategories).length === 0) {
-                    // Cas Feuille (Sélectionnable)
+                    // Cas Feuille de niveau 2 (Sélectionnable)
                    const fullText = `${category.text} > ${subcategory.text}`;
                    const escapedFullText = escapeForHtmlAttribute(fullText);
                    subcategoriesHtml += `
@@ -214,7 +249,7 @@ async function loadDataAndInitialize() {
                         </div>
                     `;
                 } else {
-                    // Cas Groupe (Ouvrable)
+                    // Cas Groupe de niveau 2 (Ouvrable)
                     subcategoriesHtml += `
                         <div class="category-item sub-group" data-id="${subcatId}">
                             <div class="category-header" onclick="window.toggleSubcategories('${subcatId}')">
@@ -229,34 +264,29 @@ async function loadDataAndInitialize() {
                 }
             }
 
-            html += `
-                <div class="category-item" data-id="${catId}">
-                    <div class="category-header" onclick="window.toggleSubcategories('${catId}')">
-                        <span>${category.text}</span>
-                        <span class="sub-arrow">▼</span>
+            if (Object.keys(subcategories).length === 0) {
+                 // Cas Feuille de niveau 1 (Sélectionnable, si le data.json le permet)
+                 const fullText = category.text;
+                 const escapedFullText = escapeForHtmlAttribute(fullText);
+                 html += `
+                    <div class="subcategory-item" data-id="${catId}" onclick="window.selectCategory('${catId}', '${escapedFullText}')">
+                        ${category.text}
                     </div>
-                    <div class="subcategory-list" id="sub-${catId}">
-                        ${subcategoriesHtml}
+                `;
+            } else {
+                // Cas Groupe de niveau 1 (Ouvrable)
+                html += `
+                    <div class="category-item" data-id="${catId}">
+                        <div class="category-header" onclick="window.toggleSubcategories('${catId}')">
+                            <span>${category.text}</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="subcategory-list" id="sub-${catId}">
+                            ${subcategoriesHtml}
+                        </div>
                     </div>
-                </div>
-            `;
-        }
-
-        dropdownMenu.innerHTML = html;
-    }
-
-    // Fonction de recherche (mode saisie de texte)
-    function searchCategories(query) {
-        if (!query.trim()) {
-            createDropdown();
-            return;
-        }
-
-        const result = renderLevel(classifiedData, 1, query, classifiedData);
-        let html = result.html;
-        
-        if (!result.localHasMatches) {
-            html = '<div class="no-results">Aucun résultat trouvé</div>';
+                `;
+            }
         }
 
         dropdownMenu.innerHTML = html;
@@ -280,12 +310,12 @@ async function loadDataAndInitialize() {
 
     // Fonction pour sélectionner une catégorie
     window.selectCategory = function(id, text) {
-        // 1. Définir la valeur de l'input caché (la chaîne complète non échappée)
-        categoryValue.value = text.replace(/\\'/g, "'"); 
+        // 1. Définir la valeur de l'input caché avec l'ID de classification pour l'envoi
+        categoryValue.value = id; 
         
         // 2. Extraire la catégorie la plus précise à afficher dans l'input visible
         const displayValue = getLastCategory(text);
-        searchInput.value = displayValue; // Affiche la dernière partie (ex: "Jets de détritus")
+        searchInput.value = displayValue; 
         
         // 3. Fermer le menu déroulant
         dropdownMenu.classList.remove('show');
@@ -299,44 +329,41 @@ async function loadDataAndInitialize() {
 
     // --- 3. Événements DOM ---
 
-    // Événement FOCUS (Au clic initial sur l'input)
+    // Événement FOCUS 
     searchInput.addEventListener('focus', function() {
-        // Affiche la liste complète si le champ est vide
         if (!searchInput.value.trim()) {
             createDropdown();
         } else {
-             // Effectue une recherche si du texte est déjà présent
             searchCategories(searchInput.value);
         }
 
-        // Affiche le dropdown et ajoute le style actif
         dropdownMenu.classList.add('show');
         searchInput.classList.add('has-results');
     });
 
-    // Événement INPUT (À CHAQUE saisie de caractère)
+    // Événement INPUT (Recherche)
     searchInput.addEventListener('input', function(e) {
         const query = e.target.value;
         
-        // 1. Déclenche la recherche et la mise en surbrillance
         searchCategories(query);
         
-        // 2. Assure l'affichage du menu déroulant
         dropdownMenu.classList.add('show');
         searchInput.classList.add('has-results'); 
         
-        // 3. Gestion du bouton "Clear"
         if (query.trim()) {
+             // Si l'utilisateur tape, on efface l'ID/texte de validation
+            categoryValue.value = ''; 
             clearBtn.classList.add('show');
         } else {
             clearBtn.classList.remove('show');
+            categoryValue.value = '';
         }
     });
 
     // Bouton clear
     clearBtn.addEventListener('click', function() {
         searchInput.value = '';
-        categoryValue.value = '';
+        categoryValue.value = ''; 
         clearBtn.classList.remove('show');
         searchInput.setAttribute('placeholder', "Choisir une nature"); 
         createDropdown(); 
@@ -356,11 +383,10 @@ async function loadDataAndInitialize() {
     mainForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Validation : assure qu'une catégorie a été sélectionnée
-        if (mainForm.checkValidity() && categoryValue.value) { 
+        if (mainForm.checkValidity() && categoryValue.value.trim() !== '') { 
             modal.style.display = "block";
-        } else if (!categoryValue.value) {
-            alert("Veuillez sélectionner une nature d'incident dans la liste déroulante.");
+        } else if (categoryValue.value.trim() === '') {
+            alert("Veuillez sélectionner une nature d'incident en cliquant sur un élément dans la liste déroulante.");
             searchInput.focus();
         }
     });
@@ -371,7 +397,7 @@ async function loadDataAndInitialize() {
         const formData = {
             classification_id: categoryValue.value,
             nature_selection: searchInput.value,
-            description: document.getElementById('description').value,
+            description: descriptionInput.value, 
             heure: document.getElementById('heure').value, 
             lieu: document.getElementById('lieu').value
         };
@@ -379,20 +405,24 @@ async function loadDataAndInitialize() {
         console.log('Rapport soumis :', formData);
         alert('Rapport soumis avec succès !'); 
         
-        // Réinitialisation du formulaire
+        // Réinitialisation complète
         mainForm.reset();
         searchInput.value = '';
         categoryValue.value = '';
         clearBtn.classList.remove('show');
         searchInput.classList.remove('has-results');
         searchInput.setAttribute('placeholder', "Choisir une nature");
+        
+        if (descriptionInput) {
+            descriptionInput.value = '';
+        }
     });
 
     cancelSendBtn.addEventListener('click', function() {
         modal.style.display = "none";
     });
     
-    // Initialise le dropdown au premier chargement (le remplissage sera fait au focus)
+    // Initialise le dropdown
     createDropdown();
 }
 
