@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Verdana-Classique';
+    src: url('Verdana.eot');
+    src: url('Verdana.eot?#iefix') format('embedded-opentype'),
+         url('Verdana.woff2') format('woff2'),
+         url('Verdana.woff') format('woff'),
+         url('Verdana.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* VARIABLES GLOBALES */
+:root {
+    --sapin: #497C29;
+    --green: #41a62a;
+    --orange: #e75113;
+    --brown: #542c08;
+    --purple: #622181;
+    --sand: #957755;
+    --blue: #009e8f;
+    --gray: #5f6062;
+    --white: #ffffff;
+    --sable: #957755;
+    --light-gray-bg: #e6e6e6;
+}
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
+    background: var(--white);
+    min-height: 100vh;
+    padding-top: 65px;
+}
+
+/* HEADER & NAVIGATION */
+.header {
+    background: var(--white);
+    height: 65px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 3px solid var(--sapin);
+    box-shadow: 0 2px 8px rgba(73, 124, 41, 0.2);
+}
+
+.mini-logo {
+    height: 40px;
+}
+
+.burger-icon {
+    height: 35px;
+    width: auto;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.burger-icon:hover {
+    opacity: 0.8;
+}
+
+/* Menu Latéral */
+#navMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -66.66%;
+    left: auto;
+    width: 66.66%;
+    /* Changé pour var(--white) */
+    background: var(--white); 
+    padding: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+#navMenu.active {
+    display: block;
+    right: 0;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    /* Changé pour une couleur foncée sur fond blanc */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+}
+
+.menu-title {
+    /* Changé pour var(--sapin) */
+    color: var(--sapin); 
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Bouton Fermer (MAJ pour le picto) */
+.close-btn {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Picto de Fermeture */
+.close-btn .close-picto {
+    width: 100%;
+    height: 100%;
+    /* Supprimé: filter: invert(100%); pour qu'il soit de sa couleur par défaut (noir) */
+}
+
+/* Les pseudo-éléments :before et :after sont supprimés car nous utilisons une image */
+
+/* Liste du Menu */
+.nav-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu-list li {
+    margin-bottom: 5px;
+}
+
+.nav-menu-list li a {
+    /* MODIFIÉ: Alignement flexible pour le picto */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre le picto et le texte */
+    
+    padding: 15px 10px;
+    /* Changé pour une couleur foncée sur fond blanc */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+    /* Changé pour var(--sapin) */
+    color: var(--sapin); 
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+.nav-menu-list li a:hover {
+    /* Changé pour une opacité sur fond blanc */
+    background: rgba(0, 0, 0, 0.05); 
+}
+
+/* --- Styles des Pictogrammes de la Liste (CORRIGÉ POUR LA COULEUR SAPIN) --- */
+.nav-picto {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Assignation des images */
+.picto-procedure {
+    background-image: url('../img/Procedures.svg'); 
+}
+
+.picto-urgence {
+    background-image: url('../img/numeros_durgence.svg'); 
+}
+
+.picto-utiles {
+    background-image: url('../img/Telephone.svg'); 
+}
+
+.picto-carte {
+    background-image: url('../img/carte.svg'); 
+}
+
+.picto-faq {
+    background-image: url('../img/Point_interrogation.svg'); 
+}
+
+.picto-lexique {
+    background-image: url('../img/lexique.svg'); 
+}
+
+.picto-parametres {
+    background-image: url('../img/Reglages.svg'); 
+}
+
+
+/* CONTENU PRINCIPAL */
+main,
+.main-content {
+    padding: 20px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Overlay pour le menu (optionnel mais recommandé) */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+
+.menu-overlay.active {
+    display: block;
+}

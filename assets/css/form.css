@@ -1,0 +1,268 @@
+/* PAGE FORMULAIRE */
+
+/* Titre du Formulaire */
+.form-title {
+    font-size: 24px;
+    color: var(--sapin);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Groupes de Champs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+/* Inputs et Textarea */
+input[type="text"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="time"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--sapin);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* SÉLECTEUR DE CATÉGORIE */
+.category-selector {
+    position: relative;
+}
+
+.search-input {
+    padding-right: 40px !important;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.search-input.has-results {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-color: var(--sapin);
+}
+
+/* Bouton Clear */
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    z-index: 1010;
+}
+
+.clear-btn.show {
+    display: flex;
+}
+
+.clear-btn:hover {
+    background: var(--brown);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: 2px solid var(--sapin);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Catégories dans le Dropdown */
+.category-item {
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    font-weight: 600;
+    color: var(--sapin);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.category-header:hover {
+    background: var(--light-gray-bg);
+}
+
+.sub-arrow {
+    transition: transform 0.3s;
+}
+
+/* Sous-catégories */
+.subcategory-list {
+    display: none;
+    padding-left: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.subcategory-list.show {
+    display: block;
+}
+
+.subcategory-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    color: var(--gray);
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.subcategory-item:hover {
+    background: rgba(73, 124, 41, 0.1);
+    color: var(--sapin);
+}
+
+/* Highlight pour recherche */
+.highlight {
+    background-color: #fef08a;
+    font-weight: 600;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #999;
+}
+
+/* BOUTON ENVOYER */
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background: var(--sapin);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.send-btn:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+}
+
+.send-btn:active {
+    transform: translateY(0);
+}
+
+/* MODALE DE CONFIRMATION */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 30% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 18px;
+    color: var(--sapin);
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.2s;
+}
+
+.modal-btn:hover {
+    opacity: 0.85;
+}
+
+.confirm-btn {
+    background-color: var(--sapin);
+    color: var(--white);
+    border: none;
+}
+
+.cancel-btn {
+    background-color: var(--white);
+    color: var(--sapin);
+    border: 2px solid var(--sapin);
+}

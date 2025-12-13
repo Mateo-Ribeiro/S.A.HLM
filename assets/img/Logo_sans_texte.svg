@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.99 140.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #58a248;
+      }
+
+      .cls-2 {
+        fill: #9aba45;
+      }
+
+      .cls-3 {
+        fill: #74ac47;
+      }
+
+      .cls-4 {
+        fill: #98bc5f;
+      }
+
+      .cls-5 {
+        fill: #c4d48a;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g id="Logo_Noir" data-name="Logo Noir">
+      <polygon class="cls-5" points="59.03 0 4.25 135.4 0 140.1 202.99 136.02 167.01 101.27 201.23 92.83 161.17 66.86 192.15 53.14 59.03 0"/>
+      <polygon class="cls-4" points="140.15 75.33 161.17 66.86 80.68 15.73 4.94 133.72 140.15 75.33"/>
+      <polygon class="cls-2" points="2.83 136.98 167.01 101.27 202.99 136.02 0 140.1 2.83 136.98"/>
+      <polygon class="cls-3" points="167.01 101.27 140.15 75.33 4.94 133.72 4.25 135.4 2.83 136.98 167.01 101.27"/>
+      <polygon class="cls-1" points="140.15 75.33 99.48 36.55 4.94 133.72 140.15 75.33"/>
+    </g>
+  </g>
+</svg>

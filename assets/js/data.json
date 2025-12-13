@@ -1,0 +1,306 @@
+{
+	"category": [
+		{
+			"classification": "1",
+			"text": "Les atteintes à la tranquillité des espaces collectifs : environnement, propreté et nuisance"
+		},
+		{
+			"classification": "2",
+			"text": "Les atteintes à la tranquillité des espaces privatifs"
+		},
+		{
+			"classification": "3",
+			"text": "Les atteintes dû à des détournements d'usage"
+		},
+		{
+			"classification": "4",
+			"text": "Les atteintes aux biens"
+		},
+		{
+			"classification": "5",
+			"text": "À l'attention des salariés"
+		}
+	],
+	"subcategory": [
+		{
+			"classification": "1.1",
+			"text": "Salissures, abandon d'objets, encombrants et jets de détritus"
+		},
+		{
+			"classification": "1.2",
+			"text": "Déjections canines"
+		},
+		{
+			"classification": "1.3",
+			"text": "Gestion des véhicules (en infraction ?)"
+		},
+		{
+			"classification": "1.4",
+			"text": "Travaux sauvages de mécanique"
+		},
+		{
+			"classification": "2.1",
+			"text": "Nuisances sonores, bruits et tapages injurieux ou nocturnes"
+		},
+		{
+			"classification": "2.2",
+			"text": "Nuisances liées aux animaux et chiens dangereux"
+		},
+		{
+			"classification": "3.1",
+			"text": "Squat de logement"
+		},
+		{
+			"classification": "3.2",
+			"text": "Dépôt d'armes, de produits stupéfiants et d'objets dangereux"
+		},
+		{
+			"classification": "3.3",
+			"text": "Occupation abusive des parties communes"
+		},
+		{
+			"classification": "3.4",
+			"text": "Violences urbaines ou situations à risques"
+		},
+		{
+			"classification": "3.5",
+			"text": "Troubles de la santé mentale"
+		},
+		{
+			"classification": "4.1",
+			"text": "Graffitis sur immeuble et sur le patrimoine"
+		},
+		{
+			"classification": "4.2",
+			"text": "Dégradations, destruction, détérioration à caractère volontaire, vandalisme"
+		},
+		{
+			"classification": "4.3",
+			"text": "Incendies volontaires, involontaires, sinistres"
+		},
+		{
+			"classification": "5.1",
+			"text": "En cas d'agression"
+		},
+		{
+			"classification": "5.2",
+			"text": "Collaboration entre les acteurs de la transquillité résidentielle"
+		}
+	],
+	"subsubcategory": [
+		{
+			"classification": "1.3.1",
+			"text": "Véhicule épave"
+		},
+		{
+			"classification": "1.3.2",
+			"text": "Véhicule ventouse"
+		},
+		{
+			"classification": "1.3.3",
+			"text": "Véhicule gênant"
+		},
+		{
+			"classification": "3.3.1",
+			"text": "Occupation des PC par les individus"
+		},
+		{
+			"classification": "3.3.2",
+			"text": "Occupation des PC par des objets"
+		},
+		{
+			"classification": "5.1.1",
+			"text": "Agressions verbales ou écrites"
+		},
+		{
+			"classification": "5.1.2",
+			"text": "Agressions physiques avec ou sans incapacité totale de travail"
+		},
+		{
+			"classification": "5.2.1",
+			"text": "Nuisances environnementales et sanitaires"
+		},
+		{
+			"classification": "5.2.2",
+			"text": "Nuisances sonores et comportementales"
+		},
+		{
+			"classification": "5.2.3",
+			"text": "Stationnement et véhicules"
+		},
+		{
+			"classification": "5.2.4",
+			"text": "Dégradations et actes de vandalisme"
+		},
+		{
+			"classification": "5.2.5",
+			"text": "Violences et sécurité publique"
+		},
+		{
+			"classification": "5.2.6",
+			"text": "Criminalité et actes illégaux"
+		},
+		{
+			"classification": "5.2.7",
+			"text": "Santé publique et sociale"
+		}
+	],
+	"content": [
+		{
+			"location": "1.1",
+			"description": "Dépôts sauvages ou jets de détritus provoquant des problèmes d'hygiène, d'odeur, de toxicité, de nuisibles et créant parfois un danger (objets coupants, toxiques, gêne des secours)",
+			"legal": "Dépôts de déchets hors zones autorisées = contravention 2ᵉ classe (jusqu'à 150 €) Dépôts plus graves = contravention 5ᵉ classe (article R635-8) Responsabilité civile engagée si dommage (article 1384 CC)",
+			"solution": "Urgence : ne rien manipuler, prévenir Manager / Police / Mairie Si auteur identifié : rappel du règlement, courrier Si locataire SA HLM : rappel, mise en demeure, PV, remboursement Prévention : sensibilisation sur les sites concernés"
+		},
+		{
+			"location": "1.2",
+			"description": "Déjections interdites sur trottoirs, voies publiques, espaces verts et aires de jeux Obligation pour le propriétaire de ramasser immédiatement",
+			"legal": "Abandon de déjections = amende de 2ᵉ classe (68 €) Basée sur l'article R635-8 du Code pénal",
+			"solution": "Rappel des règles d'hygiène Si responsable identifié : poser un accroche-porte Prévention : canisettes, distributeurs de sacs Si locataire SA HLM : rappel écrit, mise en demeure, PV, remboursement"
+		},
+		{
+			"location": "1.3.1",
+			"description": "Véhicule inutilisable, abandonné, souvent démonté ou très dégradé",
+			"legal": "Déposer une épave = contravention 5ᵉ classe (jusqu'à 1500 €) Véhicule hors d'usage = déchet (Code de l'environnement) → Jusqu'à 75 000 € d'amende + 2 ans de prison si élimination illégale",
+			"solution": "Gestion des véhicules Identifiables sur le patrimoine Identifier le propriétaire du véhicule (via voisins, Police ou Mairie) et le contacter pour qu'il déplace son véhicule Si aucune action n'est faite : Envoyer un courrier de rappel du règlement (si locataire de la SA) Si le véhicule n'est toujours pas retiré : envoyer une mise en demeure avec accusé de réception, délai de 8 jours En cas de persistance : dresser un procès-verbal Demander aux autorités l'enlèvement en fourrière Demander un remboursement du responsable si des frais (nettoyage, enlèvement) ont été engagés Prévention : mettre en place des actions de sensibilisation sur les sites concernés Gestion des véhicules Identifiables à proximité du patrimoine Signaler la situation aux autorités pour qu'elles vérifient si le véhicule appartient ou non à un locataire de la SA HLM Si le véhicule appartient à un locataire, contacter celui-ci pour lui rappeler les règles de stationnement et les conséquences d'un stationnement gênant"
+		},
+		{
+			"location": "1.3.2",
+			"description": "Véhicule identifiable stationnant plus de 7 jours sans bouger",
+			"legal": "Stationnement prolongé = occupation illégale du domaine public Contravention de 2ᵉ classe (150 €) Mise en demeure possible + enlèvement",
+			"solution": "Gestion des véhicules Identifiables sur le patrimoine Identifier le propriétaire du véhicule (via voisins, Police ou Mairie) et le contacter pour qu'il déplace son véhicule Si aucune action n'est faite : Envoyer un courrier de rappel du règlement (si locataire de la SA) Si le véhicule n'est toujours pas retiré : envoyer une mise en demeure avec accusé de réception, délai de 8 jours En cas de persistance : dresser un procès-verbal Demander aux autorités l'enlèvement en fourrière Demander un remboursement du responsable si des frais (nettoyage, enlèvement) ont été engagés Prévention : mettre en place des actions de sensibilisation sur les sites concernés Gestion des véhicules Identifiables à proximité du patrimoine Signaler la situation aux autorités pour qu'elles vérifient si le véhicule appartient ou non à un locataire de la SA HLM Si le véhicule appartient à un locataire, contacter celui-ci pour lui rappeler les règles de stationnement et les conséquences d'un stationnement gênant"
+		},
+		{
+			"location": "1.3.3",
+			"description": "Véhicule mal garé rendant la circulation difficile (piétons, voitures)",
+			"legal": "Stationnement gênant : 35 € (2ᵉ classe) Places réservées sans droit : 135 € (article R417-11)",
+			"solution": "Gestion des véhicules Identifiables sur le patrimoine Identifier le propriétaire du véhicule (via voisins, Police ou Mairie) et le contacter pour qu'il déplace son véhicule Si aucune action n'est faite : Envoyer un courrier de rappel du règlement (si locataire de la SA) Si le véhicule n'est toujours pas retiré : envoyer une mise en demeure avec accusé de réception, délai de 8 jours En cas de persistance : dresser un procès-verbal Demander aux autorités l'enlèvement en fourrière Demander un remboursement du responsable si des frais (nettoyage, enlèvement) ont été engagés Prévention : mettre en place des actions de sensibilisation sur les sites concernés Gestion des véhicules Identifiables à proximité du patrimoine Signaler la situation aux autorités pour qu'elles vérifient si le véhicule appartient ou non à un locataire de la SA HLM Si le véhicule appartient à un locataire, contacter celui-ci pour lui rappeler les règles de stationnement et les conséquences d'un stationnement gênant"
+		},
+		{
+			"location": "1.4",
+			"description": "Les travaux sauvages de mécanique sont des réparations ou modifications de véhicules réalisées sans autorisation, dans des lieux non adaptés (voie publique, parkings), et en violation des règles de sécurité, d'environnement et de voisinage.",
+			"legal": "Interdiction de réaliser des travaux d'entretien, de réparation, de vidange ou de graissage sur la voie publique Déversement de liquides insalubres → amende jusqu'à 135 € Seuls les dépannages nécessaires pour permettre au véhicule de repartir (changement de roue, batterie) sont autorisés",
+			"solution": "Rappel immédiat à l'ordre et demande d'arrêt des travaux, évacuation du matériel si nécessaire Si le responsable est locataire SA HLM : Envoi d'un courrier de rappel du règlement. Envoi d'une mise en demeure. Rédaction d'un procès-verbal. Prévention : actions de sensibilisation dans les zones les plus touchées."
+		},
+		{
+			"location": "2.1",
+			"description": "Bruits excessifs (appareils ménagers, musique forte, aboiements, etc.) de jour comme de nuit, liés au comportement ou aux équipements/animaux du locataire. Le caractère excessif est subjectif (durée, répétition, intensité, horaires).",
+			"legal": "- Article R1334-31 Code de la Santé publique - Contravention de 3ᵉ classe (art. R623-2 Code pénal) → amende jusqu'à 450 € - Appréciation souveraine du juge",
+			"solution": "1. Inviter le locataire à dialoguer directement avec le voisin 2. Proposer médiation (conciliateur de justice, services de médiation…) 3. Ouvrir une réclamation → prise en charge par le Médiateur Pour les Troubles de Voisinage (MP) 4. En cas d'échec → transfert au Pôle DSU"
+		},
+		{
+			"location": "2.2",
+			"description": "Troubles causés par des animaux domestiques (aboiements intempestifs, déjections, dégradations) et règles spécifiques pour les chiens de 1ʳᵉ et 2ᵉ catégorie (chiens d'attaque, de garde et défense).",
+			"legal": "- Article 10 loi 9 juillet 1970 : animal autorisé s'il ne cause ni dégât ni trouble de jouissance - Nuisance sonore → amende 68 à 450 € - Chiens dangereux : obligations renforcées (loi 2008-582 + Code rural L211-13-1 et L211-14) : attestation d'aptitude, évaluation comportementale, permis de détention - Mise en danger d'autrui (art. 223-1 Code pénal) → 1 an de prison + 15 000 € d'amende",
+			"solution": "1. Dialogue avec le locataire + rappel des règles 2. Proposition éducateur canin/comportementaliste ou placement de l'animal 3. Vérifier auprès du maire la déclaration du chien dangereux (obligatoire) 4. Appel police/gendarmerie en urgence 5. Constat d'huissier si nécessaire 6. Saisine services vétérinaires, SPA, DDPP 7. Actions de sensibilisation 8. Courrier de rappel au règlement + éventuelle procédure de résiliation de bail"
+		},
+		{
+			"location": "3.1",
+			"description": "Occupation illégale d'un logement ou local vide par des personnes sans droit ni titre. Exceptions : hébergement temporaire, sous-location autorisée, maintien après fin de bail légal.",
+			"legal": "Loi anti-squat 27/07/2023 (Art. 226-4 CP) : expulsion accélérée 48h, jusqu'à 3 ans de prison et 45 000 € d'amende. Occupation intermittente : procédure judiciaire, jusqu'à 2 ans et 30 000 € d'amende. Intrusion violente : pas de trêve hivernale (Art. L412-6).",
+			"solution": "1. Constater la situation sans confrontation 2. Appeler police si occupants 3. Porter plainte et lancer procédure d'expulsion 4. Sécuriser lieux (portes, cadenas) 5. Déclarer vol éventuel aux forces de l'ordre et assureurs 6. Sensibiliser locataires à fermeture et accès sécurisé"
+		},
+		{
+			"location": "3.2",
+			"description": "Stockage ou usage dans parties communes : armes, produits chimiques, stupéfiants → danger pour sécurité, santé et environnement.",
+			"legal": "Obligation bailleur (L129-4-1 CCH), stupéfiants 1 an à réclusion perpétuelle, armes/objets dangereux 2-5 ans prison + amendes jusqu'à 75 000 € (Art. 222-19 et suivants CP)",
+			"solution": "1. Sécuriser lieu sans toucher aux produits 2. Informer hiérarchie 3. Appeler police/gendarmerie 4. Procédure de résiliation de bail si trafic 5. Sensibilisation locataires sur sécurité et médiation sociale"
+		},
+		{
+			"location": "3.2.1",
+			"description": "Présence prolongée ou répétée de personnes dans les parties communes (halls, paliers, escaliers, couloirs, toits) qui entrave la circulation, gêne l'accès aux services d'urgence et aux dispositifs de sécurité, perturbe la tranquillité et la jouissance des occupants, et peut représenter un danger pour la sécurité collective.",
+			"legal": "Article L126-3 Code de la construction et de l'habitation : empêchement en réunion de la libre circulation dans les parties communes et fonctionnement des dispositifs de sécurité → 2 mois d'emprisonnement et 3 750 € d'amende Loi du 15/11/2001 : intervention des services de police/gendarmerie pour rétablir la jouissance paisible des occupants En cas de vol ou dégradations commises par les occupants : application des articles 311-1 à 311-11 du Code pénal",
+			"solution": "1. Confronter individuellement pour retrait des personnes 2. Constater situation et prendre photos 3. Rappel du règlement, mise en demeure 4. Police/gendarmerie si réitération 5. Sensibilisation locataires"
+		},
+		{
+			"location": "3.2.2",
+			"description": "Stockage permanent ou prolongé d'objets personnels (meubles, vélos, scooters, cartons, etc.) dans les parties communes (halls, paliers, escaliers, couloirs, locaux techniques, toits), entravant la circulation, gênant l'accès aux services d'urgence et aux dispositifs de sécurité, dégradant la jouissance collective et pouvant constituer un danger pour la sécurité et la salubrité.",
+			"legal": "Loi du 15/11/2001 : intervention possible des forces de l'ordre pour rétablir la jouissance paisible des occupants (R111-13 Code de la construction et de l'habitation) → amende jusqu'à 1 500 € Entrave volontaire à l'intervention des secours → amende jusqu'à 7 500 € et jusqu'à 6 mois d'emprisonnement Détournement ou vol d'énergie si applicable → sanctions identiques au vol dans les parties privatives (Art. 311-1 et suivants Code pénal)",
+			"solution": "1. Confronter le locataire pour retrait des objets 2. Mise en demeure avec délai 3. Police/gendarmerie si réitération 4. Déposer plainte et déclarer aux assureurs si vol/détérioration 5. Sensibilisation locataires"
+		},
+		{
+			"location": "3.3",
+			"description": "1. Confronter le locataire pour retrait des objets 2. Mise en demeure avec délai 3. Police/gendarmerie si réitération 4. Déposer plainte et déclarer aux assureurs si vol/détérioration 5. Sensibilisation locataires",
+			"legal": "Attroupement simple : 1 an prison + 15 000 € Armé ou violent : 3 ans prison + 45 000 € Violences graves/blessures : jusqu'à 10 ans + 150 000 € (Art. 431-4 CP, 222-7 à 222-13 CP)",
+			"solution": "1. Se mettre à l'abri, sécuriser locaux 2. Appeler police/gendarmerie 3. Sensibilisation et soutien locataires 4. Rappel règlement et remboursement si locataire SA HLM impliqué"
+		},
+		{
+			"location": "3.4",
+			"description": "Conditions affectant pensées, émotions, comportements et parfois bien-être physique",
+			"legal": "Droit égal aux soins (L1110-1 et L1110-3 CSP), consentement obligatoire sauf danger pour soi ou autrui (L3211-1 CSP), hospitalisation contrainte contrôle JLD >12 jours",
+			"solution": "1. Évaluer situation, demander avis médical 2. Intervention police/SAMU si danger 3. Sensibiliser voisins et locataires 4. Déployer formation PSSM pour personnel"
+		},
+		{
+			"location": "4.1",
+			"description": "Les graffitis ou tags sont des inscriptions/dessins faits sans autorisation sur des murs, façades et mobiliers urbains. Ils constituent une dégradation du patrimoine.",
+			"legal": "Ce sont des dégradations volontaires. Contravention de 5e classe (art. R 635-1 CP) si dommage léger : amende jusqu'à 1 500 €. Délit si inscription sur façades, mobilier urbain sans autorisation (art. 322-1 CP) : amende jusqu'à 3 750 €, TIG possible.",
+			"solution": "Étape 1 : Urgence Sécuriser le site, préserver les traces. Étape 2 : Dépôt de plainte Informer le Manager de Proximité. Plainte simplifiée si auteur inconnu. Si auteur identifié : plainte en demandant médiation pénale ou procédure d'assermentation. Prendre photos + témoignages. Étape 3 : Réparation / suites Déclaration d'assurance selon gravité. Actions de sensibilisation si nécessaire. Si auteur = locataire SA HLM : Courrier de rappel → mise en demeure → PV → demande de remboursement."
+		},
+		{
+			"location": "4.2",
+			"description": "Le vandalisme désigne toute destruction ou détérioration volontaire d'un bien : mobilier extérieur, parties communes (BAL, ascenseurs…), matériels professionnels.",
+			"legal": "Dommages légers : contravention 5e classe (art. R635-1 CP), amende jusqu'à 1 500 € Dommages graves : délit (art. 322-1 CP), peine jusqu'à 2 ans prison + 30 000 € d'amende.",
+			"solution": "Étape 1 : Urgence Sécuriser le site, préserver les indices. Étape 2 : Dépôt de plainte / constatation Informer le Manager de Proximité. Enclencher la procédure d'assermentation. Attendre la constatation par forces de l'ordre avant d'intervenir. Photos + témoignages. Étape 3 : Réparation / suites Déclaration d'assurance selon gravité. Si auteur = locataire SA HLM : Convocation → courrier de rappel → PV → demande de remboursement."
+		},
+		{
+			"location": "4.3",
+			"description": "Les incendies peuvent toucher parties communes, logements, parkings, véhicules, équipements. L'origine peut être volontaire ou involontaire (négligence). Le locataire doit obligatoirement être assuré (article 7 loi 1989).",
+			"legal": "Incendies volontaires : sanctions très sévères (art. 322-5 à 322-11 CP), allant de 1 an prison + 15 000 € à réclusion à perpétuité + 150 000 € en cas de conséquences graves. Tentatives d'incendie également punies. Incendie involontaire : responsabilité civile engagée pour négligence.",
+			"solution": "Étape 1 : Urgence Sécuriser, évacuer, appeler les pompiers. Informer le N+1. Prendre photos. Étape 2 : Constatation / enquête Ne rien nettoyer sans accord de la police + assurance. Pour un véhicule sinistré : dépôt de plainte par le propriétaire. Étape 3 : Suites / réparations Déclaration de sinistre auprès de l'assurance. Sensibilisation du site. Si auteur = locataire SA HLM : Convocation → rappel du règlement → PV → demande de remboursement."
+		},
+		{
+			"location": "5.1.1",
+			"description": "Injure ordinaire : Offenses graves et délibérées, paroles offensantes, affronts, outrages, insolences, crachats.; Injure raciste : atteinte à une personne en fonction de sa race, de sa religion ou de ses origines.; Menace : parole, geste marquant l'intention de nuire, d'affaiblir.",
+			"legal": "amende prévue pour les contraventions de la 1re classe (Article R621-2 NCP).; Si injure à caractère discriminatoire(fondée sur l'origine, l'ethnie, la nation, la race, la religion, le sexe, l'orientation sexuelle ou le handicap)  : amende prévue pour les contraventions de la 4e classe; amende prévue pour les contraventions de la 3e classe (Article R623-1 NCP).",
+			"solution": "Contacter votre manager pour transmettre les informations. Prendre contact avec Audrey GUIOT, référente hygiène et sécurité, pour un accompagnement.; Consulter un médecin ou bien les urgences, pour obtenir un certificat médical décrivant les symptômes psychologiques.; Déposer plainte en précisant la qualité de collaborateur d'un organisme HLM chargé d'une mission service public faire une constitution conjointe de partie civile et un rapport écrit détaillé à transmettre à votre société. Mettre en œuvre des actions de sensibilisation sur les sites particulièrement touchés."
+		},
+		{
+			"location": "5.1.2",
+			"description": "Les agressions/violences volontaires concernent toutes les brutalités physiques avec l'intention de nuire. Le code pénal définit la gravité des violences selon le dommage causé à la victime en référence avec une interruption totale de travail personnel (ITTP). Il est indispensable de faire établir un certificat médical : Violences sans ITTP ; Violences avec ITTP < 8 jours ; Violences avec ITTP > 8 jours (constat du médecin)",
+			"legal": "Si pas d'incapacité totale de travail : amende prévue pour les contraventions de la 4e classe ( Article R624-1 NCP) Si incapacité totale de travail d'une durée inférieure ou égale à 8 jours : amende prévue pour les contraventions de la 5e classe (Article R625-1 NCP)",
+			"solution": "Faire constater les blessures par un médecin ou bien aux urgences, pour obtenir un certificat médical décrivant les blessures ou symptômes psychologiques. Déposer une plainte avec pièces justificatives : préciser sa qualité de collaborateur d'un organisme HLM chargé d'une mission service public et donner l'adresse du siège de l'organisme. Joindre un rapport détaillé à transmettre à votre société et établir une constitution de partie civile Si vous êtes victime sans ITT :  Envoyer un courrier d'avertissement au locataire.  Effectuer un dépôt de plainte en sollicitant la médiation pénale.Si vous êtes victime avec ITT :  Envoyer un courrier d'avertissement similaire au premier cas. Privilégier un traitement particulier pour les suites judiciaires. Mettre en œuvre des actions de sensibilisation sur les sites particulièrement touchés. Prendre contact avec Audrey GUIOT, référente hygiène et sécurité, pour un accompagnement."
+		},
+		{
+			"location": "5.2.1",
+			"description": "Constats sur le terrain avec rappel du règlement intérieur pour les auteurs  Nettoyage des parties communes Signalement aux services municipaux ou forces de l'ordre.",
+			"legal": "Gestion des déchets et dépôts sauvages. Application des sanctions administratives en cas de non-respect des règles.",
+			"solution": "Constatation des troubles à la tranquillité des locaux identification des auteurs et prise des mesures légales"
+		},
+		{
+			"location": "5.2.2",
+			"description": "Constatats sur le terrain avec rappel du règlement intérieur pour les auteurs si le  rappel n'expose pas les salariés à un risque Nettoyage et remise en état des parties communes Signalement auprès des forces de l'ordre (dépôt de plainte…).",
+			"legal": "Renforcement de la surveillance préventive dans les halls concernés. Évacuations des fauteurs de troubles des lieux pour ramener la tranquillité des lieux. Verbalisation par contravention ou appréhension des auteurs pour leur présentation devant un OPJ.",
+			"solution": "Constatation des troubles à la tranquillité des locaux identification des auteurs et mesures coercitives adaptées"
+		},
+		{
+			"location": "5.2.3",
+			"description": "Relance auprès du propriétaire une demande d'identification adressée au commissariat.",
+			"legal": "Identification du propriétaire auprès de l'OPJ verbalisation immobilisation administrative mise en fourrière",
+			"solution": "Identification du propriétaire mise en demeure d'enlèvement immobilisation administrative mise en fourrière"
+		},
+		{
+			"location": "5.2.4",
+			"description": "Constatation sur le terrain puis signalement aux forces de l'ordre et dépôt de plainte.",
+			"legal": "Renforcement de la surveillance préventive par la police municipale. Appréhension des auteurs pour la  présentation devant un OPJ.",
+			"solution": "Constatation de la dégradation et ouverture d'une procédure judiciaire pour l'identification des auteurs présentation devant la justice."
+		},
+		{
+			"location": "5.2.5",
+			"description": "Signaler les violences ou situations à risques aux forces de l'ordre Assistance aux victimes",
+			"legal": "Mise en place de campagnes de prévention et d'information auprès des habitants Coordination avec les forces de l'ordre",
+			"solution": "Intervention immédiate pour protéger les victimes et neutraliser les auteurs. Enquête et poursuites judiciaires."
+		},
+		{
+			"location": "5.2.6",
+			"description": "Signaler les comportements suspects ou infractions aux forces de l'ordre.",
+			"legal": "Collaboration avec les forces de l'ordre pour des actions de prévention et sécurisation des lieux.",
+			"solution": "Répression des infractions saisie des objets dangereux arrestation des auteurs poursuites judiciaires."
+		},
+		{
+			"location": "5.2.7",
+			"description": "Identification et signalement des troubles de santé mentale des locataires aux services sociaux compétents.",
+			"legal": "Orientation des personnes vers les dispositifs municipaux d'aide sociale et dispositifs psychologiques des centres hospitaliers",
+			"solution": "Intervention de la police en cas de danger immédiat pour la personne ou autrui."
+		}
+	]
+}

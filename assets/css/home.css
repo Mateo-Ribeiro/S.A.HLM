@@ -1,0 +1,377 @@
+/* PAGE D'ACCUEIL - STYLES SPÉCIFIQUES */
+
+/* Section de Bienvenue */
+.welcome-section {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.main-logo {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+.welcome-text {
+    font-size: 24px;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.welcome-text span {
+    font-weight: bold;
+}
+
+/* Bouton Déclarer un incident */
+.form-btn {
+    background: var(--sapin);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(73, 124, 41, 0.3);
+    width: 100%;
+    max-width: 320px;
+    transition: all 0.3s ease;
+}
+
+.form-btn:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(73, 124, 41, 0.4);
+}
+
+.form-btn:active {
+    transform: translateY(0);
+}
+
+/* Conteneur des Catégories */
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+/* Boutons de Catégories - Style Dossier */
+.category-btn {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-top: 35px; 
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Conteneur du contenu */
+.category-btn .content-wrapper {
+    position: relative;
+    background: var(--white);
+    border-radius: 0 15px 15px 15px;
+    padding: 20px 15px;
+    border: 3px solid;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Languettes multiples du dossier - Effet empilé */
+/* Languette du fond (3ème) */
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 25%;
+    width: 18%;
+    height: 28px;
+    background: var(--white);
+    border: 3px solid;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: -3;
+    opacity: 0.4;
+}
+
+/* Languette du milieu (2ème) */
+.category-btn::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 15%;
+    width: 20%;
+    height: 28px;
+    background: var(--white);
+    border: 3px solid;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: -2;
+    opacity: 1;
+}
+
+/* Espace réservé pour les icônes */
+.category-btn .icon-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    min-height: 45px;
+}
+
+.category-btn .icon-placeholder img {
+    height: 35px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.category-btn:hover .icon-placeholder img {
+    opacity: 1;
+}
+
+/* Texte de la catégorie */
+.category-text {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* COULEURS DES CATÉGORIES */
+.cat1 .content-wrapper {
+    border-color: var(--sable);
+}
+.cat1::before,
+.cat1::after {
+    border-color: var(--sable);
+}
+.cat1 .category-text {
+    color: var(--sable);
+}
+
+.cat2 .content-wrapper {
+    border-color: var(--purple);
+}
+.cat2::before,
+.cat2::after {
+    border-color: var(--purple);
+}
+.cat2 .category-text {
+    color: var(--purple);
+}
+
+.cat3 .content-wrapper {
+    border-color: var(--blue);
+}
+.cat3::before,
+.cat3::after {
+    border-color: var(--blue);
+}
+.cat3 .category-text {
+    color: var(--blue);
+}
+
+.cat4 .content-wrapper {
+    border-color: var(--brown);
+}
+.cat4::before,
+.cat4::after {
+    border-color: var(--brown);
+}
+.cat4 .category-text {
+    color: var(--brown);
+}
+
+.cat5 .content-wrapper {
+    border-color: var(--orange);
+}
+.cat5::before,
+.cat5::after {
+    border-color: var(--orange);
+}
+.cat5 .category-text {
+    color: var(--orange);
+}
+
+/* Languette principale (1ère) */
+.category-btn .tab-main {
+    position: absolute;
+    top: -25px;
+    width: 22%;
+    height: 28px;
+    background: var(--white);
+    border: 3px solid;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 3;
+}
+
+/* Couleurs des languettes principales */
+.tab-main.cat1 {
+    border-color: var(--sable);
+}
+
+.tab-main.cat2 {
+    border-color: var(--purple);
+}
+
+.tab-main.cat3 {
+    border-color: var(--blue);
+}
+
+.tab-main.cat4 {
+    border-color: var(--brown);
+}
+
+.tab-main.cat5 {
+    border-color: var(--orange);
+}
+
+/* Ajustement du main */
+.main {
+    padding-bottom: 40px;
+}
+
+
+/* ================================================= */
+/* NOUVEAUX STYLES POUR LA NAVIGATION DYNAMIQUE (sous-catégories) */
+/* ================================================= */
+
+/* --- Dossier à une seule languette (niveau 2 et suivants) --- */
+.category-btn.one-tab::before {
+    /* Cache la troisième languette (celle du fond) */
+    display: none; 
+}
+
+.category-btn.one-tab::after {
+    /* Ajuste la deuxième languette pour qu'elle ait l'air "solo" */
+    opacity: 1; 
+    z-index: -2;
+    left: 20%; /* Ajustement de la position */
+    width: 60%; /* Rendre la languette plus large si nécessaire */
+}
+
+/* --- Carte cliquable (Fin de parcours pour la pop-up) --- */
+.content-card {
+    background-color: var(--white);
+    border: 3px solid var(--gray);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.content-card:hover {
+    background-color: var(--light-gray-bg);
+    transform: translateY(-2px);
+}
+
+.content-card .arrow {
+    font-size: 1.5em;
+    color: var(--sapin);
+}
+
+/* --- Modale (Pop-up) --- */
+.modal {
+    display: none; /* Caché par défaut, affiché en 'flex' par JS */
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal-content-wrapper {
+    background-color: var(--white);
+    margin: 15% auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Animation de slide-in */
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content-wrapper {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    color: var(--gray);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: #000;
+}
+
+#modalTitle {
+    color: var(--sapin);
+    border-bottom: 2px solid var(--light-gray-bg);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    color: var(--blue);
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.modal-action-btn {
+    background: var(--sapin);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
