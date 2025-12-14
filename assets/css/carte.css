@@ -1,0 +1,68 @@
+/* --- Style spécifique à la page Carte --- */
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.map-image {
+    width: 100%; 
+    height: 60vh; 
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* --- Styles pour la liste de détails --- */
+
+.location-details {
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Légèrement en arrière-plan */
+    color: var(--black);
+    margin-bottom: 100px;
+}
+
+.list-heading {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--sapin);
+    text-align: center;
+}
+
+.city-list {
+    list-style: none; /* Enlève les puces de la liste principale */
+    padding: 0;
+    margin: 0;
+}
+
+.city-list > li {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.city-list > li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.city-list ul {
+    list-style: disc; /* Puces pour les sous-éléments */
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 0.95em;
+}
+
+.city-list ul li {
+    margin-bottom: 5px;
+}
+
+.city-list strong {
+    font-size: 1.1em;
+    color: var(--sapin);
+}
