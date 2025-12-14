@@ -1,10 +1,6 @@
 @font-face {
     font-family: 'Verdana-Classique';
-    src: url('Verdana.eot');
-    src: url('Verdana.eot?#iefix') format('embedded-opentype'),
-         url('Verdana.woff2') format('woff2'),
-         url('Verdana.woff') format('woff'),
-         url('Verdana.ttf') format('truetype');
+    src: url('../typo/Verdana.eot');
     font-weight: normal;
     font-style: normal;
 }

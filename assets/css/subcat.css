@@ -76,6 +76,7 @@
     width: 100%;
     margin-top: 20px;
     cursor: pointer;
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 .categories {
@@ -97,6 +98,7 @@
     width: 100%;
     margin-bottom: 20px;
     margin-top: 15px; 
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 /* Contenu Principal du Dossier */
@@ -165,6 +167,7 @@
 .category-btn:hover::after {
     transform: translateY(-3px);
 }
+
 
 /* STYLES DU FIL D'ARIANNE */
 
@@ -328,6 +331,7 @@
     width: 100%;
     text-align: center;
     min-height: 100px;
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 .final-action-btn:hover {

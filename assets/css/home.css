@@ -37,6 +37,7 @@
     width: 100%;
     max-width: 320px;
     transition: all 0.3s ease;
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 .form-btn:hover {
@@ -68,10 +69,15 @@
     position: relative;
     transition: all 0.2s ease;
     margin-top: 35px; /* Espace pour les languettes multiples */
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 .category-btn:hover {
     transform: translateY(-2px);
+}
+
+.category-btn .category-text {
+    font-family: 'Verdana-Classique', Verdana, sans-serif;
 }
 
 /* Conteneur du contenu */
