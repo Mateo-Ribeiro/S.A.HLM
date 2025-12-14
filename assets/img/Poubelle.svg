@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.16 43.41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #957755;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #957755;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="pictogrammes">
+    <g>
+      <g>
+        <rect class="cls-2" x="4.35" y="9.86" width="27.45" height="32.55" rx=".38" ry=".38"/>
+        <path class="cls-3" d="M31.42,42.91H4.74c-.49,0-.88-.4-.88-.88V10.24c0-.49.4-.88.88-.88h26.69c.49,0,.88.4.88.88v31.79c0,.49-.4.88-.88.88ZM4.86,41.91h26.45V10.36H4.86v31.55Z"/>
+      </g>
+      <g>
+        <rect class="cls-2" x="11.08" y="1" width="13.99" height="8.86" rx=".38" ry=".38"/>
+        <path class="cls-3" d="M24.69,10.36h-13.23c-.49,0-.88-.4-.88-.88V1.38c0-.49.4-.88.88-.88h13.23c.49,0,.88.4.88.88v8.09c0,.49-.4.88-.88.88ZM11.58,9.36h12.99V1.5h-12.99v7.86Z"/>
+      </g>
+      <rect class="cls-1" x="0" y="8.81" width="36.16" height="1.53" rx=".76" ry=".76"/>
+    </g>
+  </g>
+</svg>

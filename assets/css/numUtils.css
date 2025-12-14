@@ -1,0 +1,143 @@
+:root {
+    --card-border-radius: 12px;
+}
+
+
+.main-content {
+    /* Le main-content existe déjà dans global.css. 
+       Nous ajoutons un padding inférieur pour éviter que le contenu ne touche le navbar fixe. */
+    padding-bottom: 120px; 
+}
+
+.utilite-section {
+    padding: 20px 15px; /* Marge intérieure pour les cartes */
+    margin-bottom: 60px;
+}
+
+.main-title {
+    /* S'assure que le titre principal est centré et utilise le noir */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.main-subtitle {
+    /* Titre secondaire en couleur sapin */
+    text-align: center;
+    font-weight: 500; /* Moins gras que le titre principal */
+    color: var(--sapin); 
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+
+/* Le style de base pour toutes les cartes (Header de l'accordéon et Fiche contact) */
+.accordeon-header,
+.contact-card {
+    /* Aspect visuel de la carte */
+    background-color: var(--white);
+    border: 2px solid var(--sapin); /* Bordure sapin fine */
+    border-radius: var(--card-border-radius);
+    padding: 15px 20px;
+    margin-bottom: 15px; /* Espace entre chaque carte */
+    box-shadow: none;
+    width: 100%;
+}
+
+
+.accordeon-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px; 
+    font-weight: 500;
+    color: var(--sapin); 
+    text-align: left;
+    
+    /* Retire la couleur de fond de base de l'élément button */
+    background-color: transparent; 
+}
+
+.accordeon-header .title {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+/* Flèche (chevron) */
+.accordeon-header .arrow-icon {
+    width: 20px;   
+    height: 20px;
+    margin-left: 10px;
+    background-image: url('../img/déroulant.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Flèche tournée vers le haut quand l'accordéon est ouvert */
+.accordeon-header[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
+}
+
+
+
+.accordeon-header .icon {
+    /* Conteneur du picto */
+    width: 26px;   
+    height: 26px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; 
+}
+
+/* Les classes spécifiques pour les SVGs */
+.icon-hopitaux {
+    background-image: url('../img/soins.svg');
+    filter: invert(1);
+}
+.icon-justice {
+    background-image: url('../img/Marteau_de_justice.svg');
+
+}
+.icon-conciliateurs {
+    background-image: url('../img/Balance_de_justice.svg');
+}
+.icon-refuge {
+    background-image: url('../img/refuges_animaux.svg');
+    filter: invert(1);
+}
+.icon-soutien {
+    background-image: url('../img/Soutien.svg');
+}
+
+
+
+/* Le conteneur du contenu ouvert (le UL) */
+.accordeon-content {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -5px; 
+}
+
+
+.contact-number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold; 
+    color: var(--sapin); 
+    text-decoration: none; 
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.contact-description {
+    margin: 0;
+    font-size: 14px;
+    /* Utilisation de la variable gray pour la description (plus lisible que le noir pur) */
+    color: var(--gray); 
+    line-height: 1.4;
+}

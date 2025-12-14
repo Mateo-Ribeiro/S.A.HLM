@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA HLM de l'Oise - Déclaration d'incident</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    </head>
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="assets/img/Logo_sans_texte.svg" alt="logo mini" class="mini-logo"></a>
+        <img src="assets/img/menu_burger.svg" alt="menu-burger" class="burger-icon" id="burgerBtn">
+    </header>
+
+    <nav id="navMenu">
+        <div class="menu-header">
+            <img src="assets/img/deconnexion.svg" alt="déconnexion-picto">
+            <button class="close-btn" id="closeBtn">
+                <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
+            </button>
+        </div>
+        <ul class="nav-menu-list">
+            <li><a href="#procedure">
+                <span class="nav-picto picto-procedure"></span>
+                Procédure
+            </a></li>
+            <li><a href="#numeros-urgence">
+                <span class="nav-picto picto-urgence"></span>
+                Numéros d'urgence
+            </a></li>
+            <li><a href="#numeros-utiles">
+                <span class="nav-picto picto-utiles"></span>
+                Numéros utiles
+            </a></li>
+            <li><a href="#carte">
+                <span class="nav-picto picto-carte"></span>
+                Carte
+            </a></li>
+            <li><a href="#faq">
+                <span class="nav-picto picto-faq"></span>
+                FAQ
+            </a></li>
+            <li><a href="#lexique">
+                <span class="nav-picto picto-lexique"></span>
+                Lexique
+            </a></li>
+            <li><a href="#parametres">
+                <span class="nav-picto picto-parametres"></span>
+                Paramètres
+            </a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="pageHeading" class="page-heading">Déclarer un incident</h1>
+
+        <form id="mainForm">
+            <h2 class="form-title">Détails de l'incident</h2>
+
+            <div class="form-group photo-upload-group">
+                <label for="photo">Ajouter une photo :</label>
+                <div class="photo-container">
+                    <input type="file" id="photo" name="photo" accept="image/*" class="file-input" capture="environment">
+                    <div class="photo-placeholder">
+                        <img src="assets/img/appareil_photos.svg" alt="Appareil photo" class="camera-icon">
+                        <p>Cliquer pour prendre une photo ou choisir dans les dossiers</p>
+                    </div>
+                    <img id="imagePreview" class="image-preview" src="" alt="Aperçu de l'image" style="display: none;">
+                </div>
+            </div>
+            <div class="form-group dropdown-container">
+                <label for="searchInput">Nature de l'incident : <span class="required">*</span></label>
+                <div class="category-selector">
+                    <input type="text" id="searchInput" name="nature_incident_text" placeholder="Choisir une nature" class="search-input">
+                    <input type="hidden" id="categoryValue" name="nature_incident_id" value="">
+                    <button type="button" class="clear-btn" id="clearBtn">&times;</button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description : <span class="required">*</span></label>
+                <textarea id="description" name="description" placeholder="Veuillez décrire l'incident..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="heure">Heure de l'incident :</label>
+                <input type="time" id="heure" name="heure" placeholder="Entrez l'heure" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lieu">Lieu :</label>
+                <input type="text" id="lieu" name="lieu" placeholder="Entrez le lieu de l'incident" required>
+            </div>
+
+            <button type="submit" class="send-btn">Envoyer</button>
+        </form>
+
+        <nav class="navbar">
+            <a href="#home" class="nav-item active">
+                <img src="assets/img/home.svg" alt="Accueil" />
+            </a>
+
+            <a href="#search" class="nav-item">
+                <img src="assets/img/recherche.svg" alt="Recherche" />
+            </a>
+
+            <a href="#profil" class="nav-item">
+                <img src="assets/img/profil.svg" alt="Profil" />
+            </a>
+        </nav>
+
+    </main>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Êtes-vous sûr de vouloir envoyer votre rapport ?</h2>
+            <div class="modal-actions">
+                <button id="confirmSendBtn" class="modal-btn confirm-btn">Oui</button>
+                <button id="cancelSendBtn" class="modal-btn cancel-btn">Non</button>
+            </div>
+        </div>
+    </div>
+     
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+</html>
