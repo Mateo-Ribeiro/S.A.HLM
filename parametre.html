@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/parametre.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="assets/img/Logo_sans_texte.svg" alt="logo mini" class="mini-logo"></a>
+        <img src="assets/img/menu_burger.svg" alt="menu-burger" class="burger-icon" id="burgerBtn">
+    </header>
+
+    <nav id="navMenu">
+        <div class="menu-header">
+            <img src="assets/img/deconnexion.svg" alt="déconnexion-picto">
+            <button class="close-btn" id="closeBtn">
+                <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
+            </button>
+        </div>
+        <ul class="nav-menu-list">
+            <li><a href="form.html">
+                <span class="nav-picto picto-procedure"></span>
+                Procédure
+            </a></li>
+            <li><a href="urgence.html">
+                <span class="nav-picto picto-urgence"></span>
+                Numéros d'urgence
+            </a></li>
+            <li><a href="numUtils.html">
+                <span class="nav-picto picto-utiles"></span>
+                Numéros utiles
+            </a></li>
+            <li><a href="carte.html">
+                <span class="nav-picto picto-carte"></span>
+                Carte
+            </a></li>
+            <li><a href="faq.html">
+                <span class="nav-picto picto-faq"></span>
+                FAQ
+            </a></li>
+            <li><a href="lexique.html">
+                <span class="nav-picto picto-lexique"></span>
+                Lexique
+            </a></li>
+            <li><a href="parametre.html">
+                <span class="nav-picto picto-parametres"></span>
+                Paramètres
+            </a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <h1>Paramètres</h1>
+
+        <div class="settings-list">
+
+            <div class="setting-item text-size-setting">
+                <div class="setting-info">
+                    <span class="setting-icon icon-text-size"></span>
+                    <span class="setting-label">Taille de texte</span>
+                </div>
+                <div class="setting-controls">
+                    <button class="size-btn size-minus"><span class="icon-moins"></span></button>
+                    <button class="size-btn size-plus"><span class="icon-plus"></span></button>
+                </div>
+            </div>
+
+            <div class="setting-item toggle-setting">
+                <div class="setting-info">
+                    <span class="setting-icon icon-color-blind"></span>
+                    <span class="setting-label">Daltonisme</span>
+                </div>
+                <div class="setting-controls">
+                    <label class="switch">
+                        <input type="checkbox" id="daltonismeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting-item toggle-setting">
+                <div class="setting-info">
+                    <span class="setting-icon icon-dark-mode"></span>
+                    <span class="setting-label">Mode sombre</span>
+                </div>
+                <div class="setting-controls">
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting-item reset-setting">
+                <div class="setting-info">
+                    <span class="setting-icon icon-reset"></span>
+                    <span class="setting-label">Réinitialiser</span>
+                </div>
+                <div class="setting-controls">
+                    <button class="reset-btn">
+                        <img src="assets/img/Fleche_Retour.svg" alt="Réinitialiser" class="reset-icon">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html" class="nav-item active">
+                <img src="assets/img/home.svg" alt="Accueil" />
+            </a>
+
+            <a href="search.html" class="nav-item">
+                <img src="assets/img/recherche.svg" alt="Recherche" />
+            </a>
+
+            <a href="historique.html" class="nav-item">
+                <img src="assets/img/profil.svg" alt="Profil" />
+            </a>
+        </nav>
+    </main>
+
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/parametre.js"></script>
+</body>
+
+</html>

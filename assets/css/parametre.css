@@ -1,0 +1,317 @@
+.main-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+    margin-bottom: 100px; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+/* --- Style de chaque Ligne de Réglage --- */
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    background-color: var(--sapin);
+    padding: 15px 30px;
+    border-radius: 50px;
+    gap: 15px;
+}
+
+.setting-label {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+}
+
+/* --- Style des Icônes --- */
+.setting-icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1); /* Rend les icônes blanches */
+}
+
+/* icônes */
+.icon-text-size {
+    background-image: url('../img/texte.svg'); 
+}
+.icon-color-blind {
+    background-image: url('../img/Daltonisme.svg'); 
+}
+.icon-dark-mode {
+    background-image: url('../img/mode_sombre.svg'); 
+}
+.icon-reset {
+    background-image: url('../img/Fleche_Retour_blanche.svg'); 
+}
+.icon-plus {
+    background-image: url('../img/plus_vert.svg');
+}
+.icon-moins{
+    background-image: url('../img/moins_vert.svg');
+}
+
+/* --- 1. Contrôles de Taille de Texte --- */
+
+.setting-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.size-btn {
+    font-size: 0;
+    font-weight: 300;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 3px solid var(--sapin);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.size-btn span[class^="icon-"] {
+    display: block;
+    width: 60%; 
+    height: 60%; 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.size-btn:hover {
+    transform: scale(1.05);
+}
+
+.size-btn:active {
+    transform: scale(0.95);
+}
+
+/* --- Style des switchs (toggle) --- */
+
+/* Conteneur du switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    margin: 0;
+}
+
+/* Cache l'input par défaut */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Le slider (le fond) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: white;
+    transition: .4s;
+    border: 3px solid var(--sapin); 
+    border-radius: 40px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px; 
+    width: 28px;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--sapin); 
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Quand l'interrupteur est ON */
+input:checked + .slider {
+    background-color: var(--sapin); 
+}
+
+/* Déplacement du cercle vers la droite */
+input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: white;
+}
+
+/* --- 4. Contrôle Réinitialiser --- */
+
+.reset-btn {
+    background: white;
+    border: 3px solid var(--sapin);
+    cursor: pointer;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.reset-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(30%) sepia(85%) saturate(300%) hue-rotate(80deg) brightness(85%) contrast(100%);
+    transition: transform 0.3s;
+}
+
+.reset-btn:hover {
+    transform: rotate(-90deg);
+}
+
+.reset-btn:active {
+    transform: scale(0.95);
+}
+
+.icon-color-blind {
+    filter: none;
+}
+
+/* Mode sombre */
+
+body.dark-mode {
+    --bg-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --white: #1E1E1E;
+    --black: #E0E0E0;
+    --light-grey: #2A2A2A;
+    --border-color: #404040;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header en mode sombre */
+body.dark-mode .header {
+    background-color: #2A2A2A;
+    border-bottom-color: #404040;
+}
+
+/* Navigation en mode sombre */
+body.dark-mode #navMenu {
+    background-color: #2A2A2A;
+}
+
+body.dark-mode .nav-menu-list a {
+    color: #E0E0E0;
+}
+
+body.dark-mode .nav-menu-list a:hover {
+    background-color: #404040;
+}
+
+/* Navbar en mode sombre */
+body.dark-mode .navbar {
+    background-color: #2A2A2A;
+    border-top-color: #404040;
+}
+
+body.dark-mode .navbar img {
+    filter: invert(1);
+}
+
+/* Cartes et conteneurs en mode sombre */
+body.dark-mode .card,
+body.dark-mode .setting-item {
+    background-color: #2A2A2A;
+    border-color: #404040;
+}
+
+/* Inputs en mode sombre */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+    border-color: #404040;
+}
+
+/* Boutons en mode sombre */
+body.dark-mode button {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+}
+
+body.dark-mode .size-btn {
+    background-color: #2A2A2A !important;
+}
+
+body.dark-mode .reset-btn {
+    background-color: #2A2A2A !important;
+}
+
+body.dark-mode .slider {
+    background-color: #2A2A2A !important;
+}
+
+   /* Texte Responsive */
+body {
+    font-size: var(--base-font-size, 16px);
+}
+
+h1 {
+    font-size: calc(var(--base-font-size, 16px) * 1.875); /* 30px / 16px = 1.875 */
+}
+
+h2 {
+    font-size: calc(var(--base-font-size, 16px) * 1.5);
+}
+
+h3 {
+    font-size: calc(var(--base-font-size, 16px) * 1.25);
+}
+
+p, span, a, li {
+    font-size: calc(var(--base-font-size, 16px) * 1);
+}
+
+.setting-label {
+    font-size: calc(var(--base-font-size, 16px) * 1.3);
+}
+
+   /* transition */
+body,
+.header,
+#navMenu,
+.navbar,
+.card,
+input,
+textarea,
+select,
+button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
