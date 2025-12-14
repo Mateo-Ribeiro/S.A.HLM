@@ -24,6 +24,7 @@ h1 {
   border: 3px solid var(--sapin);
   border-radius: 10px;
   outline: none;
+  font-family: "Verdana-Classique", Verdana, sans-serif;
 }
 
 .lexique-search-icon {

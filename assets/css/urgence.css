@@ -1,0 +1,44 @@
+h1 {
+  font-weight: 800;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* Style de base des cartes */
+.num-card {
+  border: 3px solid var(--sapin);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+  margin-bottom: 8%;
+}
+
+/* Style du lien conteneur pour aligner le numéro et le texte */
+.num-card .num-link {
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  color: var(--black); 
+}
+
+/* Style du numéro */
+.num-card .num-number {
+
+  font-size: 48px;
+  color: var(--sapin);
+  font-weight: 800;
+
+
+  margin-right: 20px;
+
+
+  white-space: nowrap;
+}
+
+/* Style du texte */
+.num-card .num-text {
+  font-size: 22px;
+  color: var(--black);
+  font-weight: normal; 
+  margin-top: 5px;
+}
