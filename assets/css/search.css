@@ -1,0 +1,133 @@
+/* Conteneur principal */
+.main-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+    margin-bottom: 100px; 
+}
+
+/* --- Barre de Recherche --- */
+
+.search-form {
+    margin-bottom: 40px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 3px solid var(--sapin); 
+    border-radius: 50px; 
+    overflow: hidden;
+    padding: 5px;
+    background-color: white;
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    outline: none;
+    background: transparent;
+}
+
+.search-submit-btn {
+    background: transparent;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.search-submit-btn img {
+    width: 25px; 
+    height: 25px;
+}
+
+/* --- Historique --- */
+
+.history-heading {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Style des boutons d'historique */
+.history-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--sapin); /* Fond vert */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.history-btn:hover {
+    background-color: #3d6e24; 
+}
+
+.history-btn:active {
+    transform: scale(0.99);
+}
+
+/* Icône de l'historique  */
+.history-btn .icon-history {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('assets/img/Fleche_Retour_blanche.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1); 
+    transform: scaleX(-1); 
+}
+
+.no-history-message {
+    text-align: center;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* --- Styles pour le bouton Vider l'historique --- */
+
+.clear-history-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 15px 0 25px 0; 
+    
+    /* Style basé sur l'application (bouton secondaire/clair) */
+    background-color: white;
+    color: var(--sapin);
+    border: 2px solid var(--sapin);
+    border-radius: 10px;
+    
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clear-history-btn:hover {
+    background-color: #e6ffe6; 
+}
+
+/* Optionnel: Masquer le bouton s'il n'y a rien à effacer */
+.clear-history-btn.hidden {
+    display: none;
+}
