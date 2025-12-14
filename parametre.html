@@ -18,40 +18,43 @@
 
     <nav id="navMenu">
         <div class="menu-header">
-            <img src="assets/img/deconnexion.svg" alt="déconnexion-picto">
+            <button id="logoutLinkHeader" class="logout-btn-header" aria-label="Déconnexion">
+                <img src="assets/img/deconnexion.svg" alt="Déconnexion">
+            </button>
+
             <button class="close-btn" id="closeBtn">
                 <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
             </button>
         </div>
         <ul class="nav-menu-list">
             <li><a href="form.html">
-                <span class="nav-picto picto-procedure"></span>
-                Procédure
-            </a></li>
+                    <span class="nav-picto picto-procedure"></span>
+                    Procédure
+                </a></li>
             <li><a href="urgence.html">
-                <span class="nav-picto picto-urgence"></span>
-                Numéros d'urgence
-            </a></li>
+                    <span class="nav-picto picto-urgence"></span>
+                    Numéros d'urgence
+                </a></li>
             <li><a href="numUtils.html">
-                <span class="nav-picto picto-utiles"></span>
-                Numéros utiles
-            </a></li>
+                    <span class="nav-picto picto-utiles"></span>
+                    Numéros utiles
+                </a></li>
             <li><a href="carte.html">
-                <span class="nav-picto picto-carte"></span>
-                Carte
-            </a></li>
+                    <span class="nav-picto picto-carte"></span>
+                    Carte
+                </a></li>
             <li><a href="faq.html">
-                <span class="nav-picto picto-faq"></span>
-                FAQ
-            </a></li>
+                    <span class="nav-picto picto-faq"></span>
+                    FAQ
+                </a></li>
             <li><a href="lexique.html">
-                <span class="nav-picto picto-lexique"></span>
-                Lexique
-            </a></li>
+                    <span class="nav-picto picto-lexique"></span>
+                    Lexique
+                </a></li>
             <li><a href="parametre.html">
-                <span class="nav-picto picto-parametres"></span>
-                Paramètres
-            </a></li>
+                    <span class="nav-picto picto-parametres"></span>
+                    Paramètres
+                </a></li>
         </ul>
     </nav>
 
@@ -125,6 +128,16 @@
             </a>
         </nav>
     </main>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>Voulez-vous vraiment vous déconnecter ?</p>
+            <div class="modal-actions">
+                <button id="confirmLogoutBtn" class="modal-btn confirm-btn">Déconnexion</button>
+                <button id="cancelLogoutBtn" class="modal-btn cancel-btn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="assets/js/global.js"></script>
     <script src="assets/js/nav.js"></script>

@@ -17,7 +17,10 @@
 
     <nav id="navMenu">
         <div class="menu-header">
-            <h2 class="menu-title">Menu</h2>
+            <button id="logoutLinkHeader" class="logout-btn-header" aria-label="Déconnexion">
+                <img src="assets/img/deconnexion.svg" alt="Déconnexion">
+            </button>
+
             <button class="close-btn" id="closeBtn">
                 <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
             </button>
@@ -27,7 +30,7 @@
                     <span class="nav-picto picto-procedure"></span>
                     Procédure
                 </a></li>
-            <li><a href="#numeros-urgence">
+            <li><a href="urgence.html">
                     <span class="nav-picto picto-urgence"></span>
                     Numéros d'urgence
                 </a></li>
@@ -35,11 +38,11 @@
                     <span class="nav-picto picto-utiles"></span>
                     Numéros utiles
                 </a></li>
-            <li><a href="#carte">
+            <li><a href="carte.html">
                     <span class="nav-picto picto-carte"></span>
                     Carte
                 </a></li>
-            <li><a href="#faq">
+            <li><a href="faq.html">
                     <span class="nav-picto picto-faq"></span>
                     FAQ
                 </a></li>
@@ -138,8 +141,18 @@
                 <img src="assets/img/profil.svg" alt="Profil" />
             </a>
         </nav>
-
     </main>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>Voulez-vous vraiment vous déconnecter ?</p>
+            <div class="modal-actions">
+                <button id="confirmLogoutBtn" class="modal-btn confirm-btn">Déconnexion</button>
+                <button id="cancelLogoutBtn" class="modal-btn cancel-btn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="assets/js/global.js"></script>
     <script src="assets/js/nav.js"></script>

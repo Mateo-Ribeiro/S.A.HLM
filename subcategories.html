@@ -19,37 +19,40 @@
 
     <nav id="navMenu">
         <div class="menu-header">
-            <h2 class="menu-title">Menu</h2>
+            <button id="logoutLinkHeader" class="logout-btn-header" aria-label="Déconnexion">
+                <img src="assets/img/deconnexion.svg" alt="Déconnexion">
+            </button>
+
             <button class="close-btn" id="closeBtn">
                 <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
             </button>
         </div>
         <ul class="nav-menu-list">
-            <li><a href="#procedure">
+            <li><a href="form.html">
                     <span class="nav-picto picto-procedure"></span>
                     Procédure
                 </a></li>
-            <li><a href="#numeros-urgence">
+            <li><a href="urgence.html">
                     <span class="nav-picto picto-urgence"></span>
                     Numéros d'urgence
                 </a></li>
-            <li><a href="#numeros-utiles">
+            <li><a href="numUtils.html">
                     <span class="nav-picto picto-utiles"></span>
                     Numéros utiles
                 </a></li>
-            <li><a href="#carte">
+            <li><a href="carte.html">
                     <span class="nav-picto picto-carte"></span>
                     Carte
                 </a></li>
-            <li><a href="#faq">
+            <li><a href="faq.html">
                     <span class="nav-picto picto-faq"></span>
                     FAQ
                 </a></li>
-            <li><a href="#lexique">
+            <li><a href="lexique.html">
                     <span class="nav-picto picto-lexique"></span>
                     Lexique
                 </a></li>
-            <li><a href="#parametres">
+            <li><a href="parametre.html">
                     <span class="nav-picto picto-parametres"></span>
                     Paramètres
                 </a></li>
@@ -59,25 +62,25 @@
     <main class="main">
         <div class="breadcrumb-container cat1" id="pageHeading">
             <a href="home.html" class="back-link" onclick="history.back(); return false;">
-                 <img src="assets/img/Fleche_Retour.svg" alt="Retour" class="back-arrow-icon">
+                <img src="assets/img/Fleche_Retour.svg" alt="Retour" class="back-arrow-icon">
             </a>
             <span class="breadcrumb-text">
                 <a href="home.html">Accueil</a> &gt; <span class="category-name">Chargement...</span>
             </span>
         </div>
         <div class="categories" id="dynamicContainer">
-            </div>
+        </div>
 
         <nav class="navbar">
-            <a href="#home" class="nav-item active">
+            <a href="home.html" class="nav-item active">
                 <img src="assets/img/home.svg" alt="Accueil" />
             </a>
 
-            <a href="#search" class="nav-item">
+            <a href="search.html" class="nav-item">
                 <img src="assets/img/recherche.svg" alt="Recherche" />
             </a>
 
-            <a href="#profil" class="nav-item">
+            <a href="historique.html" class="nav-item">
                 <img src="assets/img/profil.svg" alt="Profil" />
             </a>
         </nav>
@@ -94,11 +97,20 @@
         </div>
     </div>
 
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>Voulez-vous vraiment vous déconnecter ?</p>
+            <div class="modal-actions">
+                <button id="confirmLogoutBtn" class="modal-btn confirm-btn">Déconnexion</button>
+                <button id="cancelLogoutBtn" class="modal-btn cancel-btn">Annuler</button>
+            </div>
+        </div>
+    </div>
 
 
-    <script src="assets/js/subcat.js"></script>
     <script src="assets/js/global.js"></script>
     <script src="assets/js/nav.js"></script>
+    <script src="assets/js/subcat.js"></script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    filter: brightness(0) invert(1); /* Rend les icônes blanches */
+    filter: brightness(0) invert(1); 
 }
 
 /* icônes */
@@ -72,7 +72,7 @@ h1 {
     background-image: url('../img/moins_vert.svg');
 }
 
-/* --- 1. Contrôles de Taille de Texte --- */
+/* --- Contrôles de Taille de Texte --- */
 
 .setting-controls {
     display: flex;
@@ -167,7 +167,7 @@ input:checked + .slider:before {
     background-color: white;
 }
 
-/* --- 4. Contrôle Réinitialiser --- */
+/* --- Contrôle Réinitialiser --- */
 
 .reset-btn {
     background: white;

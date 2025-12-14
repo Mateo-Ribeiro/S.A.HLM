@@ -65,7 +65,7 @@
     gap: 10px;
     width: 100%;
     padding: 15px 25px;
-    background-color: var(--sapin); /* Fond vert */
+    background-color: var(--sapin);
     color: white;
     border: none;
     border-radius: 10px;
@@ -127,7 +127,6 @@
     background-color: #e6ffe6; 
 }
 
-/* Optionnel: Masquer le bouton s'il n'y a rien à effacer */
 .clear-history-btn.hidden {
     display: none;
 }

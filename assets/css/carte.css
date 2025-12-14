@@ -21,7 +21,7 @@ h1 {
     margin-top: 40px;
     padding: 15px;
     border-radius: 10px;
-    background-color: #f9f9f9; /* Légèrement en arrière-plan */
+    background-color: #f9f9f9; 
     color: var(--black);
     margin-bottom: 100px;
 }
@@ -35,7 +35,7 @@ h1 {
 }
 
 .city-list {
-    list-style: none; /* Enlève les puces de la liste principale */
+    list-style: none; 
     padding: 0;
     margin: 0;
 }

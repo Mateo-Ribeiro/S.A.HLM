@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function findContentByLocation(classification) {
-        return dataCache.content.find(content => content.location === classification);
+        return dataCache.content ? dataCache.content.find(content => content.location === classification) : null;
     }
     
     function getFirstDigit(classification) {
@@ -273,13 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('lastContentClassification', classification);
 
-        modal.style.display = 'flex';
-        setTimeout(() => modal.classList.add('active'), 10); 
+        modal.classList.add('is-visible'); 
     }
 
     function hideContentModal() {
-        modal.classList.remove('active');
-        setTimeout(() => modal.style.display = 'none', 300); 
+        modal.classList.remove('is-visible');
+        // La gestion de la fermeture est maintenant assurée par la transition CSS
     }
 
     if (closeBtn) {
@@ -288,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modal) {
         modal.addEventListener('click', (e) => {
+            // Fermer la modale si l'utilisateur clique sur le fond (le 'modal' lui-même)
             if (e.target === modal) {
                 hideContentModal();
             }

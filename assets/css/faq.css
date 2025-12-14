@@ -3,7 +3,7 @@
     max-width: 600px;
     margin: 60px auto;
     padding: 0 20px;
-    margin-bottom: 100px; /* Espace pour la navbar */
+    margin-bottom: 100px; 
 }
 
 h1 {
@@ -51,7 +51,7 @@ h1 {
 
 /* Style pour l'icône de flèche (utilisez une police ou une image SVG) */
 .icon-arrow::before {
-    content: '▼'; /* Flèche pointant vers le bas */
+    content: '▼'; 
     display: block;
     font-size: 0.8em;
     margin-left: 15px;

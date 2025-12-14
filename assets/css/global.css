@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Verdana-Classique';
-    src: url('../typo/Verdana.eot');
+    src: url('Verdana.eot');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,30 +36,31 @@ body {
 
 /* Début Nav */
 .navbar {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75vw;
-  height: 6vh;
-  background-color: var(--sapin);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 2.5rem;
-  padding: 0 3%;
-  z-index: 1000;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75vw;
+    max-width: 450px; 
+    height: 6vh;
+    background-color: var(--sapin);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 2.5rem;
+    padding: 0 3%;
+    z-index: 1000;
 }
 
 .nav-item img {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .nav-item.active {
-  border: 2px solid #fff;
-  padding: 2% 5%;
-  border-radius: 1rem;
+    border: 2px solid #fff;
+    padding: 2% 5%;
+    border-radius: 1rem;
 }
 /*Fin Nav*/
 
@@ -97,23 +98,26 @@ body {
 
 /* Menu Latéral */
 #navMenu {
-    display: none;
+    display: block; 
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     top: 0;
     bottom: 0;
     right: -66.66%;
     left: auto;
     width: 66.66%;
-    /* Changé pour var(--white) */
     background: var(--white); 
     padding: 20px;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease, opacity 0.3s ease; 
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
     z-index: 2000;
     overflow-y: auto;
 }
 
 #navMenu.active {
+    visibility: visible;
+    opacity: 1;    
     display: block;
     right: 0;
 }
@@ -124,19 +128,17 @@ body {
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 10px;
-    /* Changé pour une couleur foncée sur fond blanc */
     border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
 }
 
 .menu-title {
-    /* Changé pour var(--sapin) */
     color: var(--sapin); 
     font-size: 20px;
     margin: 0;
     font-weight: bold;
 }
 
-/* Bouton Fermer (MAJ pour le picto) */
+/* Bouton Fermer */
 .close-btn {
     width: 30px;
     height: 30px;
@@ -154,10 +156,7 @@ body {
 .close-btn .close-picto {
     width: 100%;
     height: 100%;
-    /* Supprimé: filter: invert(100%); pour qu'il soit de sa couleur par défaut (noir) */
 }
-
-/* Les pseudo-éléments :before et :after sont supprimés car nous utilisons une image */
 
 /* Liste du Menu */
 .nav-menu-list {
@@ -171,15 +170,12 @@ body {
 }
 
 .nav-menu-list li a {
-    /* MODIFIÉ: Alignement flexible pour le picto */
     display: flex;
     align-items: center;
-    gap: 15px; /* Espace entre le picto et le texte */
+    gap: 15px; 
     
     padding: 15px 10px;
-    /* Changé pour une couleur foncée sur fond blanc */
     border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
-    /* Changé pour var(--sapin) */
     color: var(--sapin); 
     text-decoration: none;
     transition: all 0.2s;
@@ -187,11 +183,10 @@ body {
 }
 
 .nav-menu-list li a:hover {
-    /* Changé pour une opacité sur fond blanc */
     background: rgba(0, 0, 0, 0.05); 
 }
 
-/* --- Styles des Pictogrammes de la Liste (CORRIGÉ POUR LA COULEUR SAPIN) --- */
+/* --- Styles des Pictogrammes de la Liste --- */
 .nav-picto {
     display: inline-block;
     width: 20px;
@@ -239,7 +234,7 @@ main,
     margin: 0 auto;
 }
 
-/* Overlay pour le menu (optionnel mais recommandé) */
+/* Overlay pour le menu */
 .menu-overlay {
     display: none;
     position: fixed;
@@ -253,4 +248,120 @@ main,
 
 .menu-overlay.active {
     display: block;
+}
+
+/* --- Pop-up Modale --- */
+/* La pop-up est initialement cachée et prend tout l'écran */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2500; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    /* Centrage */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Affichage lorsque la classe 'is-visible' est ajoutée par le JS */
+.modal.is-visible {
+    display: flex;
+}
+
+/* Contenu de la pop-up (la boîte au centre) */
+.modal-content {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    border: 5px solid var(--sapin); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    width: 90%; 
+    max-width: 350px; 
+    text-align: center;
+    
+    /* Animation d'apparition */
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+/* État affiché du contenu */
+.modal.is-visible .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.modal-btn {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 12px; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.modal-btn:active {
+    transform: scale(0.98);
+}
+
+/* Bouton confirmation */
+.confirm-btn {
+    background-color: var(--sapin); 
+    color: var(--white); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+.confirm-btn:hover {
+    background-color: #3b6623; 
+}
+
+/*Bouton cancel */
+.cancel-btn {
+    background-color: var(--white); 
+    color: var(--sapin); 
+    border: 3px solid var(--orange); 
+    box-shadow: none;
+}
+
+.cancel-btn:hover {
+    background-color: #f0f0f0; 
+}
+
+/* Bouton de déconnexion */
+.logout-btn-header {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-right: auto; 
+}
+
+.logout-btn-header img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.logout-btn-header:active {
+    opacity: 0.8;
 }

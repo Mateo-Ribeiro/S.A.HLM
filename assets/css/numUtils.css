@@ -4,18 +4,15 @@
 
 
 .main-content {
-    /* Le main-content existe déjà dans global.css. 
-       Nous ajoutons un padding inférieur pour éviter que le contenu ne touche le navbar fixe. */
     padding-bottom: 120px; 
 }
 
 .utilite-section {
-    padding: 20px 15px; /* Marge intérieure pour les cartes */
+    padding: 20px 15px; 
     margin-bottom: 60px;
 }
 
 .main-title {
-    /* S'assure que le titre principal est centré et utilise le noir */
     text-align: center;
     font-size: 28px;
     margin-bottom: 10px;
@@ -24,22 +21,21 @@
 .main-subtitle {
     /* Titre secondaire en couleur sapin */
     text-align: center;
-    font-weight: 500; /* Moins gras que le titre principal */
+    font-weight: 500; 
     color: var(--sapin); 
     margin-bottom: 30px;
     font-size: 22px;
 }
 
 
-/* Le style de base pour toutes les cartes (Header de l'accordéon et Fiche contact) */
+/* Le style de base pour toutes les cartes */
 .accordeon-header,
 .contact-card {
-    /* Aspect visuel de la carte */
     background-color: var(--white);
-    border: 2px solid var(--sapin); /* Bordure sapin fine */
+    border: 2px solid var(--sapin); 
     border-radius: var(--card-border-radius);
     padding: 15px 20px;
-    margin-bottom: 15px; /* Espace entre chaque carte */
+    margin-bottom: 15px;
     box-shadow: none;
     width: 100%;
 }
@@ -54,8 +50,6 @@
     font-weight: 500;
     color: var(--sapin); 
     text-align: left;
-    
-    /* Retire la couleur de fond de base de l'élément button */
     background-color: transparent; 
 }
 
@@ -64,7 +58,7 @@
     margin-left: 10px;
 }
 
-/* Flèche (chevron) */
+/* Flèche */
 .accordeon-header .arrow-icon {
     width: 20px;   
     height: 20px;
@@ -84,7 +78,6 @@
 
 
 .accordeon-header .icon {
-    /* Conteneur du picto */
     width: 26px;   
     height: 26px;
     background-size: contain;
@@ -137,7 +130,6 @@
 .contact-description {
     margin: 0;
     font-size: 14px;
-    /* Utilisation de la variable gray pour la description (plus lisible que le noir pur) */
     color: var(--gray); 
     line-height: 1.4;
 }

@@ -24,7 +24,6 @@
     border-color: #ccc;
 }
 
-/* Style de la première carte (bordure verte) */
 .procedure-card.card-green {
     border: 3px solid #66b032; 
 }

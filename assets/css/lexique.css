@@ -7,7 +7,6 @@
 }
 
 h1 {
-  font-size: 42px;
   font-weight: 800;
   margin-bottom: 40px;
 }
@@ -24,7 +23,6 @@ h1 {
   border: 3px solid var(--sapin);
   border-radius: 10px;
   outline: none;
-  font-family: "Verdana-Classique", Verdana, sans-serif;
 }
 
 .lexique-search-icon {

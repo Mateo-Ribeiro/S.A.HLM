@@ -3,7 +3,7 @@
 // --- VARIABLES GLOBALES ET DOM ---
 const burgerBtn = document.getElementById("burgerBtn");
 const closeBtn = document.getElementById("closeBtn"); 
-const navMenu = document.getElementById("navMenu");
+const nav_menu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-menu-list a"); 
 const categoriesContainer = document.querySelector(".categories");
 const formBtn = document.querySelector(".form-btn");
@@ -14,11 +14,11 @@ let dataCache = {};
 // --- FONCTIONS UTILITAIRES ---
 
 function closeMenu() {
-    navMenu.classList.remove('active');
+    nav_menu.classList.remove('active');
 }
 
 function openMenu() {
-    navMenu.classList.add('active');
+    nav_menu.classList.add('active');
 }
 
 // Fonction pour charger les données et les mettre en cache
@@ -92,19 +92,19 @@ if (categoryButtons) {
 
 // Fermer le menu si on clique en dehors
 document.addEventListener('click', function(event) {
-    if (navMenu && burgerBtn) {
-        const isClickInsideMenu = navMenu.contains(event.target);
+    if (nav_menu && burgerBtn) {
+        const isClickInsideMenu = nav_menu.contains(event.target);
         const isClickOnBurger = burgerBtn.contains(event.target);
         
-        if (!isClickInsideMenu && !isClickOnBurger && navMenu.classList.contains('active')) {
+        if (!isClickInsideMenu && !isClickOnBurger && nav_menu.classList.contains('active')) {
             closeMenu();
         }
     }
 });
 
 // Empêcher la propagation des clics à l'intérieur du menu
-if (navMenu) {
-    navMenu.addEventListener('click', function(event) {
+if (nav_menu) {
+    nav_menu.addEventListener('click', function(event) {
         event.stopPropagation();
     });
 }
