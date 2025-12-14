@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="assets/img/Logo_sans_texte.svg" alt="logo mini" class="mini-logo"></a>
+        <img src="assets/img/menu_burger.svg" alt="menu-burger" class="burger-icon" id="burgerBtn">
+    </header>
+
+    <nav id="navMenu">
+        <div class="menu-header">
+            <img src="assets/img/deconnexion.svg" alt="déconnexion-picto">
+            <button class="close-btn" id="closeBtn">
+                <img src="assets/img/croix.svg" alt="Fermer le menu" class="close-picto">
+            </button>
+        </div>
+        <ul class="nav-menu-list">
+            <li><a href="form.html">
+                    <span class="nav-picto picto-procedure"></span>
+                    Procédure
+                </a></li>
+            <li><a href="urgence.html">
+                    <span class="nav-picto picto-urgence"></span>
+                    Numéros d'urgence
+                </a></li>
+            <li><a href="numUtils.html">
+                    <span class="nav-picto picto-utiles"></span>
+                    Numéros utiles
+                </a></li>
+            <li><a href="#carte">
+                    <span class="nav-picto picto-carte"></span>
+                    Carte
+                </a></li>
+            <li><a href="#faq">
+                    <span class="nav-picto picto-faq"></span>
+                    FAQ
+                </a></li>
+            <li><a href="lexique.html">
+                    <span class="nav-picto picto-lexique"></span>
+                    Lexique
+                </a></li>
+            <li><a href="#parametres">
+                    <span class="nav-picto picto-parametres"></span>
+                    Paramètres
+                </a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <h1>FAQ</h1>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="question-text">Comment puis-je signaler un incident sur la voie publique ?</span>
+                    <span class="icon-arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Vous pouvez signaler un incident directement via notre application en utilisant le bouton
+                        "Déclarer un incident" sur la page d'accueil ou après avoir sélectionné la catégorie d'incident
+                        concernée. Suivez les étapes pour fournir les détails, photos et la localisation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="question-text">Quel est le délai de traitement pour un signalement ?</span>
+                    <span class="icon-arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Le délai de traitement varie en fonction de la nature et de l'urgence de l'incident.
+                    </p>
+                    <ul>
+                        <li><strong>Urgences :</strong> Transmission immédiate aux services d'urgence (15, 17,
+                            18).</li>
+                        <li><strong>Incidents courants :</strong> Pris en charge par les services municipaux
+                            dans les 48 à 72 heures ouvrées.</li>
+                        <li><strong>Problèmes complexes :</strong> Peuvent nécessiter une intervention plus longue
+                            et un suivi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="question-text">Puis-je rester anonyme lors d'un signalement ?</span>
+                    <span class="icon-arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Oui. L'application vous permet de choisir de faire un signalement anonyme. Cependant, fournir
+                        vos coordonnées peut être nécessaire si les services ont besoin de précisions sur la
+                        localisation ou les circonstances de l'incident.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="question-text">Où trouver les numéros d'urgence et numéros utiles ?</span>
+                    <span class="icon-arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Ces numéros sont accessibles directement depuis le menu principal de navigation (menu burger),
+                        sous les rubriques "Numéros d'urgence" (15, 17, 18, 114) et "Numéros utiles" (services de
+                        voirie, déchetterie, etc.).
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="question-text">Que faire si mon problème n'est pas dans la liste des catégories
+                        ?</span>
+                    <span class="icon-arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Si votre problème ne correspond à aucune catégorie, veuillez choisir la catégorie la plus proche
+                        ou utiliser le champ de description pour détailler l'incident. Les services pourront réorienter
+                        votre demande si nécessaire.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <nav class="navbar">
+            <a href="home.html" class="nav-item active">
+                <img src="assets/img/home.svg" alt="Accueil" />
+            </a>
+
+            <a href="search.html" class="nav-item">
+                <img src="assets/img/recherche.svg" alt="Recherche" />
+            </a>
+
+            <a href="historique.html" class="nav-item">
+                <img src="assets/img/profil.svg" alt="Profil" />
+            </a>
+        </nav>
+    </main>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/faq.js"></script>
+</body>
+
+</html>
